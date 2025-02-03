@@ -4,30 +4,48 @@
     <meta charset="UTF-8">
     <title>판다마켓</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div>
-        <a href="index.html"><img src="img/big_logo.png"></a>
-    </div>
-    <div>
-        <a>이메일</a><br>
-        <input type="email" name="email" placeholder="이메일을 입력해주세요">
-    </div>
-    <div>
-        <a>비밀번호</a><br>
-        <input type="password" name="password" placeholder="비밀번호를 입력해주세요">
-    </div>
-    <div>
-        <a href="/login" style="text-decoration: none;">로그인</a>
-    </div>
-    <div>
-        <a>간편 로그인하기</a>
-        <a><img src="img/ic_google.png"></a>
-        <a><img src="img/ic_kakao.png"></a>
-    </div>
-    <div>
-        <a>판다마켓이 처음이신가요?</a>
-        <a href="/signup" style="text-decoration: none;">회원가입</a>
-    </div>
+    <main>
+        <div class="logo">
+            <div>
+                <a class="top_logo" href="index.html"><img src="img/big_logo.png"></a>
+            </div>
+        </div>
+        <div class="all_text">
+            <div class="email">
+                <div class="in_email">
+                    <a class="email_text">이메일</a><br>
+                    <!-- <div class="input_email"> -->
+                        <input class="input_text" type="email" name="email" placeholder="이메일을 입력해주세요">
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="password">
+                <div>
+                    <a class="password_text">비밀번호</a><br>
+                    <input class="input_text" type="password" name="password" placeholder="비밀번호를 입력해주세요">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="/login" style="text-decoration: none;">로그인</a>
+                </div>
+            </div>
+                <div>
+                    <a>간편 로그인하기</a>
+                    <a href="https://www.google.com/"><img src="img/ic_google.png"></a>
+                    <a href="www.kakaocorp.com/page/"><img src="img/ic_kakao.png"></a>
+                </div>
+            </div>
+            <div>
+                <div class="signup_all">
+                    <a>판다마켓이 처음이신가요?</a>
+                    <a href="/signup" style="text-decoration: none;">회원가입</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
