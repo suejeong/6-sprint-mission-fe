@@ -10,7 +10,7 @@ body {
 
 main {
     width: 640px;
-    height: 618px;
+    height: 842px;
     margin: 0 auto;
     /* text-align: center; */
     padding-top: 231px;
@@ -42,7 +42,7 @@ main {
     align-items: center;
 }
 
-.email_text {
+.text {
     color: #1F2937;
     /* padding: 0 593px 16px 0; */
     font-size: 18px;
@@ -52,18 +52,17 @@ main {
     text-decoration-skip-ink: none;
 }
 
-.password_all {
+.top_text {
     margin-top: 24px;
 }
 
-.password_text {
-    /* padding: 0 593px 16px 0; */
+/* .password_text {
     font-size: 18px;
     font-weight: 700;
     line-height: 26px;
     text-align: left;
     text-decoration-skip-ink: none;
-}
+} */
 
 .input_text {
     background: #F3F4F6;
@@ -97,7 +96,7 @@ main {
     opacity: 0px;
 }
 
-.login_box {
+.signup_box {
     background: #9CA3AF;
     width: 640px;
     height: 56px;
@@ -112,7 +111,7 @@ main {
     cursor: pointer;
 }
 
-.login {
+.signup {
     color: white;
     font-family: 'Pretendard';
     font-size: 20px;
@@ -150,7 +149,7 @@ main {
     cursor: pointer
 }
 
-.signup_all {
+.login_all {
     flex: auto;
     text-align: center;
     font-family: 'Pretendard';
@@ -162,7 +161,7 @@ main {
     margin-top: 24px;
 }
 
-.signup_text {
+.login_text {
     color: #3692FF;
     font-size: 14px;
     font-weight: 500;
