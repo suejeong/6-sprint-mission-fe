@@ -5,40 +5,47 @@
     <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HEY5PGKZV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7HEY5PGKZV');
+    </script>
     <title>판다마켓 - 회원가입</title>
   </head>
   <body style="width: 100%;">
-    <div style="width: 396px; height: 132px; margin: 231px auto auto; padding: 12.98px 0 15.14px;">
+    <div style="width: 24.75rem; height: 8.25rem; margin: 14.4375rem auto auto; padding: 0.8113rem 0 0.9463rem;">
       <a href="index.html" style="text-decoration: none; display: flex; align-items: center; justify-content: space-between;">
         <img src="image/판다 로고.svg">
-        <span style="color: var(--hreftxt-focusinput-color); font-family: ROKAFSans; font-weight: 700; font-size: 66.34px; line-height: 89.56px;">
+        <span style="color: var(--hreftxt-focusinput-color); font-family: ROKAFSans; font-weight: 700; font-size: 4.1463rem; line-height: 5.5975rem;">
           판다마켓
         </span>
       </a>
     </div>
-    <form style="width: 640px; height: 524px; margin: 40px auto auto;">
-      <label class="index" for="email">
-        이메일
-      </label>
-      <input class="inputbox" id="email" name="email" type="email" required placeholder="이메일을 입력해주세요"> 
-      <label class="index" for="nickname">
-        닉네임
-      </label>
-      <input class="inputbox" id="nickname" name="nickname" type="text" required placeholder="닉네임을 입력해주세요">
-      <label class="index" for="password">
-        비밀번호
-      </label>
-      <input class="inputbox" id="password" name="password" type="password" required placeholder="비밀번호를 입력해주세요">
-      <label class="index" for="passwordCheck">
-        비밀번호 확인
-      </label>
-      <input class="inputbox" id="passwordCheck" name="passwordCheck" type="password" required placeholder="비밀번호를 다시 한 번 입력해주세요">
-      <button class="loginbtn" style="font-family: Pretendard; font-weight: 600; font-size: 20px; line-height: 32px; text-align: center;">
+    <form style="width: 40rem; height: 32.75rem; margin: 2.5rem auto auto;">
+      <label class="index" for="email">이메일</label>
+      <input class="inputbox" id="email" name="email" type="email" required="" placeholder="이메일을 입력해주세요"> 
+      <label class="index" for="nickname">닉네임</label>
+      <input class="inputbox" id="nickname" name="nickname" type="text" required="" placeholder="닉네임을 입력해주세요">
+      <label class="index" for="password">비밀번호</label>
+      <div>
+        <input class="inputbox" id="password" name="password" type="password" required="" placeholder="비밀번호를 입력해주세요">
+        <img class="eye-icon" src="image/눈 off.svg">
+      </div>
+      <label class="index" for="passwordCheck">비밀번호 확인</label>
+      <div>
+        <input class="inputbox" id="passwordCheck" name="passwordCheck" type="password" required="" placeholder="비밀번호를 다시 한 번 입력해주세요">
+        <img class="eye-icon" src="image/눈 off.svg">
+      </div>
+      <button class="btn" style="font-family: Pretendard; font-weight: 600; font-size: 1.25rem; line-height: 2rem; text-align: center;">
         회원가입
       </button>
     </form>
     <div class="bottombox">
-      <p style="font-family: Pretendard; font-weight: 500; font-size: 16px; line-height: 26px; color: var(--basictxt-color);">
+      <p style="font-family: Pretendard; font-weight: 500; font-size: 1rem; line-height: 1.625rem; color: var(--basictxt-color);">
         간편 로그인하기
       </p>
       <div class="logo">
@@ -55,12 +62,13 @@
       </div>
     </div>
     <div class="text">
-      <span style="font-family: Pretendard; font-weight: 500; font-size: 14px; line-height: 24px; color: var(--basictxt-color);">
+      <span style="font-family: Pretendard; font-weight: 500; font-size: 0.875rem; line-height: 1.5rem; color: var(--basictxt-color);">
         이미 회원이신가요?
       </span>
-      <a href="login.html" style="font-family: Pretendard; font-weight: 500; font-size: 14px; line-height: 16.71px; text-decoration: underline solid; color: var(--hreftxt-focusinput-color);">
+      <a href="login.html" style="font-family: Pretendard; font-weight: 500; font-size: 0.875rem; line-height: 1.0444rem; text-decoration: underline solid; color: var(--hreftxt-focusinput-color);">
         로그인
       </a>
     </div>
+    <script src="signup.js"></script>
   </body>
 </html>

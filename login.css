@@ -10,7 +10,7 @@
   --hreftxt-focusinput-color: #3692FF;
   --basictxt-color: #1F2937;
   --logintxt-inputbox-bg-color: #F3F4F6;
-  --placeholder-loginbtn-bg-color: #9CA3AF;
+  --placeholder-btn-bg-color: #9CA3AF;
   --bottombox-bg-color: #E6F2FF;
 }
 
@@ -22,8 +22,21 @@
   color: var(--basictxt-color);
   font-family: Pretendard;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+form div {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  width: 1.2794rem;
+  height: 1.1294rem;
+  top: 2.2181rem;
+  bottom: 2.6525rem;
+  right: 1.6087rem;
 }
 
 .inputbox:focus {
@@ -32,72 +45,77 @@
 
 .inputbox {
   background-color: var(--logintxt-inputbox-bg-color);
-  width: 640px;
-  height: 56px;
+  width: 40rem;
+  height: 3.5rem;
   border: none;
-  border-radius: 12px;
-  padding: 16px 24px;
-  margin: 16px auto 24px;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  margin: 1rem auto 1.5rem;
 }
 
 ::placeholder {
-  color: var(--placeholder-loginbtn-bg-color);
+  color: var(--placeholder-btn-bg-color);
 }
 
-.loginbtn {
-  background-color: var(--placeholder-loginbtn-bg-color);
+.btn {
+  background-color: var(--placeholder-btn-bg-color);
   color: var(--logintxt-inputbox-bg-color);
-  width: 640px;
-  height: 56px;
-  border-radius: 40px;
+  width: 40rem;
+  height: 3.5rem;
+  border-radius: 2.5rem;
   border: none;
-  padding: 16px 124px;
+  padding: 1rem 7.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   margin: auto;
+}
+
+.btnAble {
+  background-color: var(--hreftxt-focusinput-color);
+  cursor: pointer;
 }
 
 .bottombox {
   background-color: var(--bottombox-bg-color);
-  width: 640px;
-  height: 74px;
-  border-radius: 8px;
-  padding: 16px 23px;
+  width: 40rem;
+  height: 4.625rem;
+  border-radius: 0.5rem;
+  padding: 1rem 1.4375rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin: 24px auto;
+  gap: 0.625rem;
+  margin: 1.5rem auto;
 }
 
 .logo {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .googlebtn {
   background-color: white;
-  width: 42px;
-  height: 42px;
+  width: 2.625rem;
+  height: 2.625rem;
   border-radius: 100%;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .kakaobtn {
   background-color: #F5E14B;
-  width: 42px;
-  height: 42px;
+  width: 2.625rem;
+  height: 2.625rem;
   border-radius: 100%;
-  padding: 10px 8px 8px 8px;
+  padding: 0.625rem 0.5rem 0.5rem 0.5rem;
 }
 
 .text {
   display: flex;
   align-items: center;
-  gap: 4px;
-  width: 197px;
-  height: 24px;
-  margin: auto auto 234px;
+  gap: 0.25rem;
+  width: 12.3125rem;
+  height: 1.5rem;
+  margin: auto auto 14.625rem;
 }
