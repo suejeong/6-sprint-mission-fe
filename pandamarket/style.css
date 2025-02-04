@@ -1,0 +1,390 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@font-face {
+    font-family:'ROKAF Sans';
+    src:url('font/ROKAF Slab Serif Bold.ttf') format('truetype');
+}
+:root {
+    --primary-color: #3692FF;
+    --secondary-color: #374151;
+    --background-color: #f8f9fa;
+    --footer-color: #141826;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 1rem;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: white; 
+    width: 100%; 
+    height: 4.5rem; 
+    top: 0; 
+    left: 0; 
+    z-index: 10; 
+}
+
+.header-img {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    max-width: 120rem; 
+}
+
+.logo-img{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 10rem;
+    height: 2.5rem;
+    margin-left: 12.5rem;
+    text-decoration: none;
+    
+}
+#logo{
+    height: 2.5rem;
+    width: 2.5rem; 
+    cursor: pointer; 
+    margin-left: 0;
+}
+
+.title{
+    font-family: 'ROKAF Sans';
+    font-size:1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color:var(--primary-color);
+    display: flex;
+    margin-left:0.5rem;
+
+}
+
+
+#login {
+    display: inline-block;
+    height: 3rem;
+    width: 8rem; 
+    cursor: pointer; 
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3rem;
+    border: none;
+    margin-right:12.5rem;
+}
+
+
+
+
+.main{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width:100%;
+    height:34rem;
+    background-color: #CFE5FF;
+}
+.main-image {
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #CFE5FF; 
+    width: 70rem;
+    height: 21.5rem;
+    
+}
+
+.text-button {
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    justify-content: flex-start;
+    align-items: flex-start; 
+    width: 22.5rem;
+    height: 16.5rem;
+    margin-top:2.5rem;
+}
+
+#main-text {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 3.5rem;
+}
+
+.button {
+    position: absolute; 
+    display: inline-block;
+    bottom: 0; 
+    left: 0; 
+    margin-bottom:4rem;
+    width: 22.5rem;
+    height: 3.5rem;
+    border-radius: 2.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3.5rem;
+    border: none;
+    z-index: 1;
+}
+
+
+.main-image img {
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    width: auto; 
+    height: auto; 
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sub{
+    display: flex;
+    justify-content: space-between;
+    width:62rem;
+    height:28rem;
+    background-color: #fcfcfc;
+    margin: 8.5rem 0;
+}
+
+.sub img {
+    width: auto;
+    height: auto;
+    margin-left:0;
+    
+}
+.sub-text{
+    margin:2rem 2.5rem;
+    z-index:1;
+    min-width: 19rem;
+}
+#sub-title{
+    color:var(--primary-color);
+    font-size:1rem;
+    font-weight: bold;
+    margin-top:6rem;
+}
+
+#sub-txt{
+    margin:0.75rem 0;
+    color:black;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+#sub-ex{
+    margin:1.5rem 0;
+    font-size:1.25rem;
+    font-weight: 500;
+
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: var(--footer-color);
+    width: 100%;
+    height: 10rem;
+}
+
+.footer-img{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 120rem;
+    padding: 2rem 12.5rem;
+}
+
+#icon{
+    display: flex;
+    gap: 1rem;
+    margin: 0 2rem;
+}
+
+#icon img {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.link {
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.link:visited {
+    text-decoration: none; 
+    color: white; 
+}
+
+#info {
+    color: #9CA3AF;
+    margin: 0 2rem;
+}
+
+.text-link{
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.login-logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25rem;
+    height: 8.25rem;
+    cursor: pointer;
+    text-decoration-color: white;
+    margin-bottom:2.5rem;
+    
+}
+#login-logo{
+    width:6.5rem;
+    height: 6.5rem;
+
+}
+#login-title{
+    text-decoration-color: white;
+    font-weight: 700;
+    color:var(--primary-color);
+    display: flex;
+    font-size: 3.75rem;
+    margin-left: 0.5rem;
+    font-family: 'ROKAF Sans';
+
+}
+.login-logo:visited{
+    text-decoration-color: white;
+}
+
+
+
+#login-button {
+    display: inline-block;
+    width: 40rem;
+    height: 3.5rem;
+    border-radius: 2.5rem;
+    /* background-color: var(--primary-color); */
+    background-color: #9CA3AF;
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3.5rem;
+    border: none;
+    cursor: pointer;
+    margin: 1.5rem 0;
+}
+
+#login-button.active{
+    background-color: var(--primary-color);
+    
+}
+
+.main-login{
+    width:40rem;
+    height:38.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100vh;
+
+}
+
+label{
+    text-align: left;
+    width: 40rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+input{
+    background-color: #F3F4F6;
+    border: none;
+    width: 40rem;
+    height: 3.5rem;
+    border-radius: 0.75rem;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline-color: var(--primary-color);  
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.5rem;
+    cursor: pointer;
+    color: gray;
+}
+.simple-login{
+    background-color: #eaf2fe;
+    width: 40rem;
+    height: 4.5rem;
+    border-radius:0.5rem;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.simple-login-img{
+    margin-left: 24rem;
+    width: 6.5rem;
+    height: 3rem;
+    padding: 0;
+}
+
+#kakao {
+    margin-left:0.5rem;
+}
+
+
+
+
+#signin-link{
+    color:var(--primary-color);
+    text-decoration: underline;
+}
