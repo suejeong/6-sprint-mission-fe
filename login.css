@@ -27,12 +27,12 @@ section {
 }
 
 .login__title__container img {
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .login__title__container a {
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: 'ROKAF';
   font-weight: bold;
 
