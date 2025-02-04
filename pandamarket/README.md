@@ -35,8 +35,7 @@
 
 ## 스크린샷
 
-![image](image/sprint_mission_1-1.png)
-![image](image/sprint_mission_1-2.png)
+![image](image/sprint_mission_1.png)
 
 ## 멘토에게
 
@@ -54,16 +53,17 @@
 
 공통
 - [x]  README.md 파일을 작성해 주세요.
-- [x] 마크다운 언어를 숙지하여 작성해 주세요.
-- [x] 내용은 자유롭게 작성해 주세요.
+    - [x] 마크다운 언어를 숙지하여 작성해 주세요.
+    - [x] 내용은 자유롭게 작성해 주세요.
 - [x]  본인 브랜치(ex)part1-홍길동)에 스프린트 미션을 업로드해 주세요.
 - [x]  적절한 커밋 메시지를 남겨 주세요.
 - [x]  1-Sprint-Mission 레포지토리를 fork 합니다.
 - [x]  GitHub에 PR(Pull Request)을 생성해 upstream의 본인 브랜치(ex)part1-홍길동)에 미션을 제출합니다.
 - [x]  PR 코멘트에 아래 내용들을 포함해 주세요.
-
-- [x]  스프린트 미션 요구사항 체크리스트
-
+    - [x]  스프린트 미션 요구사항 체크리스트
+        - [x] 아래 예시 사진과 같이 완료한 만큼 체크 표시를 해 주세요.
+        - [x]  주요 변경사항
+        - [x]  멘토님에게 남길 메시지
 - [x]  Git 활용 과정에서 유닉스 커맨드를 활용해 주세요.
 - [x]  HTML, CSS 파일을 Netlify로 배포합니다. (참고: https://www.codeit.kr/learn/5309)
 
