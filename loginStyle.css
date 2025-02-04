@@ -1,0 +1,255 @@
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.signup-container {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 640px;
+    height: auto;
+    min-height: 618px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.logo {
+    width: 396px;
+    height: 132px;
+    margin-bottom: 40;
+}
+
+.signup-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+label {
+    width: 47px;
+    height: 21px;
+  
+    font-family: 'Pretendard', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.48px;
+
+    color: #1F2937;
+    text-align: left;
+
+    display: block;
+    margin-bottom: 16px;
+    white-space: nowrap;
+}
+
+/* 입력 필드 스타일 (이메일, 닉네임) */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 640px;
+    height: 56px;
+    border-radius: 12px;
+    background: #F3F4F6;
+    transition: border 0.2s ease-in-out;
+}
+
+/* 이메일 및 닉네임 입력 필드 */
+.input-wrapper input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Pretendard', sans-serif;
+    color: #9CA3AF;
+    padding: 15px 24px;
+}
+
+/* 입력 필드 포커스 시 강조 */
+.input-wrapper:focus-within {
+    border: 2px solid #3692FF;
+}
+
+/* 비밀번호 입력 필드 컨테이너 */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 592px;
+    height: 26px;
+    border-radius: 12px;
+    background: #F3F4F6;
+    transition: border 0.2s ease-in-out;
+    padding: 15px 24px;   
+}
+
+/* 입력 필드 스타일 */
+.password-wrapper input {
+    width: 224px;
+    height: 26px;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    color: #9CA3AF;
+    line-height: 26px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 입력 필드 포커스 시 강조 */
+.password-wrapper:focus-within {
+    border: 2px solid #3692FF;
+}
+
+/* 비밀번호 보기 아이콘 */
+.toggle-password {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+    margin-left: 344px;
+}
+
+
+.login-btn {
+    width: 100%;
+    max-width: 640px;
+    height: 56px;
+
+    background-color: #9CA3AF;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: 'Pretendard', sans-serif;
+    text-align: center;
+
+    border: none;
+    border-radius: 40px;
+    
+    padding: 16px 285px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+
+}
+
+
+/* 전체 배경 div */
+.social-login-wrapper {
+    background-color: #E6F2FF;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 640px;
+    height: 74px;
+}
+
+/* 내부 콘텐츠 (텍스트 + 아이콘) */
+.social-login-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 594px;
+    height: 42px;
+    padding: 16px 23px 16px 23px;
+}
+
+/* 텍스트 div */
+.social-text {
+    width: 101px;
+    height: 26px;
+
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    
+    color: #1F2937;
+    text-align: left;
+    margin: 8px 0;
+}
+
+
+/* 아이콘 묶음 div */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 393px;
+}
+
+/* 아이콘 스타일 */
+.social-icon {
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 하단 로그인 링크 */
+.signup-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: auto; /* Hug 적용 */
+    max-width: 151px;
+    height: auto; /* Hug 적용 */
+    max-height: 24px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #1F2937;
+    
+    gap: 4px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 로그인 링크 */
+.signup-link a {
+    text-decoration: underline;
+    color: #3182F6;
+    font-weight: 500;
+}
+
