@@ -39,7 +39,11 @@ form div {
   right: 1.6087rem;
 }
 
-:focus {
+.eye-icon.off {
+  visibility: hidden;
+}
+
+.inputbox:focus {
   outline-color: var(--hreftxt-focusinput-color);
 }
 
