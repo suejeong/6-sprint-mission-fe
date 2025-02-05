@@ -7,11 +7,11 @@
 }
 
 :root {
-  --hreftxt-focusinput-color: #3692FF;
-  --basictxt-color: #1F2937;
-  --logintxt-inputbox-bg-color: #F3F4F6;
+  --href-txt-focus-input-color: #3692FF;
+  --basic-txt-color: #1F2937;
+  --login-txt-input-box-bg-color: #F3F4F6;
   --placeholder-btn-bg-color: #9CA3AF;
-  --bottombox-bg-color: #E6F2FF;
+  --bottom-box-bg-color: #E6F2FF;
 }
 
 * {
@@ -19,7 +19,7 @@
 }
 
 .index {
-  color: var(--basictxt-color);
+  color: var(--basic-txt-color);
   font-family: Pretendard;
   font-weight: 700;
   font-size: 1.125rem;
@@ -43,12 +43,12 @@ form div {
   visibility: hidden;
 }
 
-.inputbox:focus {
-  outline-color: var(--hreftxt-focusinput-color);
+.input-box:focus {
+  outline-color: var(--href-txt-focus-input-color);
 }
 
-.inputbox {
-  background-color: var(--logintxt-inputbox-bg-color);
+.input-box {
+  background-color: var(--login-txt-input-box-bg-color);
   width: 40rem;
   height: 3.5rem;
   border: none;
@@ -63,7 +63,7 @@ form div {
 
 .btn {
   background-color: var(--placeholder-btn-bg-color);
-  color: var(--logintxt-inputbox-bg-color);
+  color: var(--login-txt-input-box-bg-color);
   width: 40rem;
   height: 3.5rem;
   border-radius: 2.5rem;
@@ -77,12 +77,12 @@ form div {
 }
 
 .btnAble {
-  background-color: var(--hreftxt-focusinput-color);
+  background-color: var(--href-txt-focus-input-color);
   cursor: pointer;
 }
 
-.bottombox {
-  background-color: var(--bottombox-bg-color);
+.bottom-box {
+  background-color: var(--bottom-box-bg-color);
   width: 40rem;
   height: 4.625rem;
   border-radius: 0.5rem;
@@ -99,7 +99,7 @@ form div {
   gap: 1rem;
 }
 
-.googlebtn {
+.google-btn {
   background-color: white;
   width: 2.625rem;
   height: 2.625rem;
@@ -107,7 +107,7 @@ form div {
   padding: 0.625rem;
 }
 
-.kakaobtn {
+.kakao-btn {
   background-color: #F5E14B;
   width: 2.625rem;
   height: 2.625rem;
