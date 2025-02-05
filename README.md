@@ -13,3 +13,4 @@
   - Favicon 적용(index, login, signup)
   - html 클래스, CSS 변수 이름 수정
   - 카카오톡, 구글 아이콘 깨짐 현상으로 이름 수정
+  - 로그인, 회원가입 footer 부분 텍스트 크기 조절해서 위치 조정
