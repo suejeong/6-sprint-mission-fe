@@ -48,3 +48,26 @@ _위 이미지는 판다마켓의 대표 이미지입니다._ 📸
 ---
 
 본 프로젝트는 [코드잇](https://www.codeit.kr)의 소유이며, 교육 목적으로만 사용됩니다. © 2024 Codeit. All rights reserved.
+
+# 직접 변경한 내용
+
+1. main Page making
+   메인 페이지 제작
+   요구사항에 맞춰
+
+- CSS RESET
+- 화면 사이즈에 반응하도록 제작
+- SNS icon 클릭 시 새로운 창으로 열리게
+
+2. sub Page(login/sign) making
+   서브 페이지 제작
+   요구사항에 맞춰
+
+- CSS RESET
+- input 요소 & 색상
+- palette color 값 css 변수로 등록
+
+3. 구글애널리틱스 등록 및 reset.css 수정
+   요구사항에 맞춰 구글애널리틱스 등록
+
+- 기존 reset.css 삭제 후 모든 브라우저에 원하는 디자인이 적용될 수 있도록 reset.css를 통해 css 초기화
