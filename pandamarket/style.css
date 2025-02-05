@@ -5,8 +5,10 @@
 }
 :root {
     --primary-color: #3692FF;
-    --secondary-color: #374151;
-    --background-color: #f8f9fa;
+    --secondary-color: #9CA3AF;
+    --background-color: #374151;
+    --sub-background-color: #FCFCFC
+    --primary-text-color: #f3f4f6;
     --footer-color: #141826;
 }
 
@@ -72,7 +74,7 @@ body {
     cursor: pointer; 
     border-radius: 0.5rem;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--primary-text-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
@@ -116,7 +118,7 @@ body {
 }
 
 #main-text {
-    color: var(--secondary-color);
+    color: var(--background-color);
     font-size: 2.5rem;
     font-weight: bold;
     line-height: 3.5rem;
@@ -132,7 +134,7 @@ body {
     height: 3.5rem;
     border-radius: 2.5rem;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--primary-text-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
@@ -163,7 +165,7 @@ body {
     justify-content: space-between;
     width:62rem;
     height:28rem;
-    background-color: #fcfcfc;
+    background-color: var(--sub-background-color);
     margin: 8.5rem 0;
 }
 
@@ -239,7 +241,7 @@ body {
 }
 
 #info {
-    color: #9CA3AF;
+    color: var(--secondary-color);
     margin: 0 2rem;
 }
 
@@ -297,8 +299,8 @@ body {
     height: 3.5rem;
     border-radius: 2.5rem;
     /* background-color: var(--primary-color); */
-    background-color: #9CA3AF;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
     text-decoration: none;
     font-size: 1.25rem;
     font-weight: bold;
@@ -334,7 +336,7 @@ label{
 }
 
 input{
-    background-color: #F3F4F6;
+    background-color: var(--primary-text-color);
     border: none;
     width: 40rem;
     height: 3.5rem;
