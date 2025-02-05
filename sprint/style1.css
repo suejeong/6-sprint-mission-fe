@@ -1,3 +1,8 @@
+:root {
+  --primary-color-100: #3692FF;
+  --secondary-color-gray400: #9CA3AF;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -42,7 +47,7 @@ input {
   border-radius: 12px;
   background-color: #F3F4F6;
   border: 0;
-  outline-color: #3692FF;
+  outline-color: var(--primary-color-100);
 }
 
 .password_box {
@@ -63,17 +68,19 @@ form button {
   padding: 16px 124px;
   font-size: 20px;
   line-height: 32px;
-  background-color: #3692FF;
+  background-color: var(--secondary-color-gray400);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #F3F4F6;
   border: 0;
+  
 }
 
-form button:disabled {
-  background-color: #9CA3AF;
+button:hover {
+  background-color: var(--primary-color-100);
 }
+
 
 .easy {
   width: 100%;
@@ -102,5 +109,5 @@ form button:disabled {
 }
 
 .sign a {
-  color: #3692FF;
+  color: var(--primary-color-100);
 }
