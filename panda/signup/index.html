@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>판다마켓_회원가입</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <img src="img/logo.jpg" alt="판다마켓 로고">
+        </a>
+    <header>
+
+    <main>
+        <form class="signup_form">
+            <label for="email">이메일</label>
+            <input type="email" id="email" placeholder="이메일을 입력해주세요">
+
+            <label for="nickname">닉네임</label>
+            <input type="nickname" id="nickname" placeholder="닉네임을 입력해주세요">
+
+            <label for="password">비밀번호</label>
+            <div class="password-container">
+            <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
+                <img src="img/btn_visibility_on_24px.png" id="eyepassword" class="eye-password" alt="비밀번호 보기">
+            </div>
+
+            <label for="password">비밀번호 확인</label>
+            <div class="password-container">
+            <input type="password" id="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+                <img src="img/btn_visibility_on_24px.png" id="eyepassword" class="eye-password" alt="비밀번호 보기">
+            </div>
+
+            <button type="submit" class="singup_btn">회원가입</button>
+        </form>
+   
+        <div class="social_login">
+            <p>간편 로그인하기</p>
+            <div class="sns_buttons">
+                <a href="https://www.google.com/" class="sns_btn">
+                    <img src="img/Component 2.png" alt="Google 로그인">
+                </a>
+            
+                <a href="https://www.kakaocorp.com/page/" class="sns_btn">
+                    <img src="img/Component 3.png" alt="kakao 로그인">
+                </a>
+            </div>
+        </div>
+
+        <p class="signup_text">이미 회원이신가요?
+            <a href="/login" class="signup_link">로그인</a>
+        </p>
+    </main>
+
+</body>
+</html>
