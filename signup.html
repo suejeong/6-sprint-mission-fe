@@ -9,23 +9,31 @@
 
 <body>
     <main class="container">
-        <section class="loginBox">
-            <header class="logo">
+        <section class="signupBox">
+            <header class="logo" style="margin-bottom: 150px;">
                 <a href="/">
                     <img src="Property 1=lg.png" alt="logo">
                 </a>
             </header>
-            <article class="login">
+            <article class="signup">
                 <form>
                     <div class="email">
                         <label for="email">이메일</label>
                         <input type="text" id="email" name="id" placeholder="이메일을 입력해주세요">
                     </div>
+                    <div class="nickname">
+                        <label for="nickname">닉네임</label>
+                        <input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력해주세요">
+                    </div>
                     <div class="password">
                         <label for="password">비밀번호</label>
                         <input type="password" id="password" name="pw" placeholder="비밀번호를 입력해주세요">
                     </div>
-                    <button type="submit">로그인</button>
+                    <div class="password">
+                        <label for="password">비밀번호 확인</label>
+                        <input type="password" id="checkpassword" name="cpw" placeholder="비밀번호를 다시 한 번 입력해주세요">
+                    </div>
+                    <button type="submit">회원가입</button>
                     <div class="simpleLogin">
                         <p>간편 로그인하기</p>
                         <div class="simpleLogin_img">
@@ -33,7 +41,7 @@
                             <a href="https://www.kakaocorp.com/page/"><img src="kakao_login.png" alt="kakao_login"></a>
                         </div>
                     </div>
-                    <p class="signupPage">판다마켓이 처음이신가요?&nbsp; <a href="/signup">회원가입</a> </p>
+                    <p class="loginPage">이미 회원이신가요??&nbsp; <a href="/login">로그인</a> </p>
                 </form>
             </article>
         </section>
