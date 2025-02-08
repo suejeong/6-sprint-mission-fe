@@ -166,6 +166,12 @@ span {
   gap: 10px;
   background-color: #E6F2FF;
 }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
 .social-icons a {
   width: 42px;
   height: 42px;
@@ -173,7 +179,6 @@ span {
   border: 1px;
   cursor: pointer;
   text-decoration: none;
-  /* 두아이콘 간격은 뭘로? */
 }
 
 .signup-link a {
@@ -182,5 +187,4 @@ span {
   line-height: 16.71px;
   text-decoration: underline solid;
   color: #3692FF;
-  /* skiplink = false? */
 }
