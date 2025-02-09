@@ -1,5 +1,5 @@
 body {
-    padding: 60px 640px 178px !important;
+    padding: 100px 640px 178px !important;
 }
 
 .container {
@@ -67,10 +67,6 @@ input[type="submit"] {
     border-radius: 40px;
     border-width: 0;
 }
-
-/* input[type="submit"]:hover {
-    background-color: #3692FF;
-}  */
 
 .social-login {
     box-sizing: border-box;
