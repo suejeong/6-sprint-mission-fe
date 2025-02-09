@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ROKAF';
+  src: url('../fonts/ROKAF-Sans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* 메인 컬러 */
+  --primary-color: #3692ff;
+
+  /* 텍스트 컬러 */
+  --text-dark: #1f2937;
+  --text-light: #f3f4f6;
+
+  /* 배경 컬러 */
+  --bg-light: #f3f4f6;
+  --bg-blue-light: #e6f2ff;
+
+  /* 비활성화 컬러 */
+  --disabled-color: #9ca3af;
+
+  /* 링크 컬러 */
+  --link-blue: #3692ff;
+
+  --footer-bg: #111827;
+  --footer-text: #6b7280;
+  --container-width: 1200px;
+  --banner-bg: #cfe5ff;
+
+  /* 기본 폰트 설정 추가 */
+  font-family: 'Pretendard-Regular', sans-serif;
+}
