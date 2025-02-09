@@ -1,0 +1,233 @@
+@charset "utf-8";
+@import url("reset.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+
+/* 기본설정  */
+:root {
+    --p-text-color: #1f2937;
+    --ipt-btnText-color: #f3f4f6;
+    --iptText-btn-color: #9ca3af;
+    --sns-bg-color: #e6f2ff;
+    --a-text-color: #3692ff;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 600;
+    -ms-overflow-style: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* 전체 화면 높이 */
+    margin: 0;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* edge 브라우저에서 눈 아이콘 삭제 */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+/* ========================================== */
+
+/* page  html 설정 */
+.login {
+    width: 40rem;
+    height: 38.625rem;
+    gap: 40px;
+
+    /* 기존 margin 대신 flexbox 사용 */
+    margin: 0 auto;
+
+    /* 중앙 정렬을 위한 flex 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.signup {
+    width: 40rem;
+    height: 52.5rem;
+    gap: 2.5rem;
+
+    /* 기존 margin 제거하고 flexbox 적용 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* 화면 중앙 정렬 */
+    margin: 0 auto;
+}
+
+
+/* ========================================== */
+
+/* header */
+header img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ========================================== */
+
+/* section */
+section p {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    color: var(--p-text-color);
+}
+
+section input {
+    width: 100%;
+    height: 3.3rem;
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    gap: 0.625rem;
+    border: none;
+    background: var(--ipt-btnText-color);
+    font-family: 'Pretendard';
+    font-size: 1.1rem;
+    line-height: 1.625rem;
+    color: var(--p-text-color);
+    box-sizing: border-box;
+    caret-color: var(--a-text-color);
+}
+
+section input::placeholder {
+    color: var(--iptText-btn-color);
+}
+
+section input:focus {
+    outline-color: var(--a-text-color);
+}
+
+.to_password {
+    position: relative;
+}
+
+.to_password input {
+    padding-right: 2.5rem;
+}
+
+.to_password i {
+    position: absolute;
+    right: 15px;
+    top: 78%;
+    transform: translateY(-50%);
+    color: var(--iptText-btn-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.login_btn {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login_btn button {
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 2.5rem;
+    border: none;
+    gap: 0.625rem;
+    background: var(--iptText-btn-color);
+    font-family: 'Pretendard';
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2rem;
+    text-align: center;
+    color: var(--ipt-btnText-color);
+    cursor: pointer;
+}
+
+.login_btn button:hover {
+    transform: scale(0.99);
+    background: var(--a-text-color);
+}
+
+.sns_login {
+    background: var(--sns-bg-color);
+    width: 93%;
+    height: 2.625rem;
+    border-radius: 0.5rem;
+    gap: 0.625rem;
+    padding: 1rem 1.4375rem;
+}
+
+.sns_inner {
+    width: 37.125rem;
+    height: 2.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.sns_text p {
+    font-weight: 500;
+    line-height: 1.625rem;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.sns_img {
+    display: flex;
+    cursor: pointer;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.google:hover {
+    transform: scale(1.01);
+    opacity: 0.7;
+}
+
+.kakao:hover {
+    transform: scale(1.01);
+    opacity: 0.7;
+}
+
+.sign_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.sign_text p {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--p-text-color);
+}
+
+.sign_text a {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.044375rem;
+    text-decoration: underline solid var(--a-text-color);
+    color: var(--a-text-color);
+}
+
+.sign_text a:hover {
+    opacity: 0.7;
+}
