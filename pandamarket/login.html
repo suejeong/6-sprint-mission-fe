@@ -19,6 +19,7 @@
             placeholder="이메일을 입력해주세요"
             required
         >
+        <p class="error-message" id="email-error"></p>
         <label for="password-input">비밀번호</label>
         <input
             id="password-input"
@@ -27,7 +28,8 @@
             type="password"
         >
         <i class="fas fa-eye toggle-password" onclick="togglePassword('password-input', this)"></i>
-        <a href="index.html" id="login-button">로그인</a>
+        <p class="error-message" id="password-error"></p>
+        <a href="items.html" id="login-button">로그인</a>
         <div class="simple-login">
             <p>간편로그인 하기</p>
             <div class="simple-login-img">
@@ -58,7 +60,32 @@
         const emailInput = document.getElementById("email-input")
         const passwordInput = document.getElementById("password-input")
         const loginButton = document.getElementById("login-button")
-
+        function checkEmail(){
+            const emailError = document.getElementById('email-error')
+            const emailPattern = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+            if (emailInput.value.trim() === ""){
+                emailError.textContent = "이메일을 입력해주세요"
+            }
+            else if (!emailPattern.test(emailInput.value)){
+                emailError.textContent = "잘못된 이메일 형식입니다."
+            }
+            else {
+                emailError.textContent = ""
+            }
+        }
+        function checkPassword(){
+            const passwordError = document.getElementById('password-error')
+            const passwordPattern = /^[a-zA-Z0-9]{8,}$/;
+            if (passwordInput.value.trim() === ""){
+                passwordError.textContent = "비밀번호를 입력해주세요"
+            }
+            else if (!passwordPattern.test(passwordInput.value)){
+                passwordError.textContent = "비밀번호를 8자 이상 입력해주세요."
+            }
+            else{
+                passwordError.textContent = ""
+            }
+        }
         function checkInputs(){
             if (emailInput.value.trim()!== "" && passwordInput.value.trim() !== ""){
                 loginButton.classList.add("active")
@@ -67,9 +94,9 @@
                 loginButton.classList.remove("active")
             }
         }
-
-        emailInput.addEventListener("input", checkInputs);
-        passwordInput.addEventListener("input", checkInputs);
+        
+        emailInput.addEventListener("blur", checkEmail);
+        passwordInput.addEventListener("blur", checkPassword);
     </script>
 </body>
 </html>

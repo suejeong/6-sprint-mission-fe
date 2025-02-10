@@ -8,8 +8,9 @@
     --secondary-color: #9CA3AF;
     --background-color: #374151;
     --sub-background-color: #FCFCFC
-    --primary-text-color: #f3f4f6;
+    --primary-text-color: #F3F4F6;
     --footer-color: #141826;
+    --error-color: #F74747
 }
 
 body {
@@ -389,4 +390,11 @@ input:focus {
 #signin-link{
     color:var(--primary-color);
     text-decoration: underline;
+}
+
+.error-message{
+    color: var(--error-color);
+    font-size: 1rem;
+    justify-content: left;
+
 }
