@@ -1,0 +1,197 @@
+@import "./reset.css";
+@font-face {
+  font-family: "ROKAFSans";
+  src: url("font/ROKAF\ Sans\ Bold.ttf") format("Woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.icon {
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
+  color: #E5E7EB;
+}
+
+.bannertext {
+  color: #374151;
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 3.5rem; 
+}
+
+.maintext1 {
+  color: #3691FF;
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  margin-bottom: 0.75rem;
+}
+
+.maintext2 {
+  color: #374151;
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  letter-spacing: 0.0625rem;
+  margin-bottom: 1.5rem;
+}
+
+.maintext3 {
+  color: #374151;
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 4.375rem;
+  margin-top: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.headericon {
+  background-color: white;
+  display: grid;
+  grid-template: 4.375rem / minmax(22.0625rem, 34.5625rem) minmax(20.5rem, 33rem);
+  justify-content: space-between;
+  height: 4.375rem;
+  width: 100%;
+  max-width: 120rem;
+}
+
+.logobtn {
+  color: #3692FF;
+  display: flex;
+  justify-content: start;
+  width: 9.5625rem;
+  height: 3.1875rem;
+  margin: 0.5938rem 0rem 0.5938rem auto;
+  align-items: center;
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-size: 1.7188rem;
+}
+
+.loginbtn {
+  background-color: #3692FF;
+  color: white;
+  width: 8rem;
+  height: 3rem;
+  padding: 0.75rem 1.4375rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin: 0.6875rem auto 0.6875rem 0;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4375rem;
+}
+
+.start {
+  background-color: #CFE5FF;
+  height: 33.75rem;
+  position: relative;
+}
+
+.itemsbtn {
+  background-color: #3692FF;
+  color: white;
+  border-radius: 2.5rem;
+  width: 22.3125rem;
+  height: 3.5rem;
+  padding: 0.8438rem 7.75rem;
+}
+
+.startimg {
+  display: grid;
+  grid-template: 21.25rem / 25.3125rem 22.75rem 46.625rem 25.3125rem;
+  justify-content: center;
+  width: 100%;
+  height: 21.25rem;
+  position: absolute;
+  bottom: 0rem;
+}
+
+.box {
+  display: grid;
+  grid-template: 27.75rem / 36.75rem 25rem;
+  justify-content: center;
+  width: 100%;
+  height: 27.75rem;
+  margin: 8.625rem 0;
+  position: relative;
+}
+
+.middlebox {
+  display: grid;
+  grid-template: 27.75rem / 25rem 36.75rem;
+  justify-content: center;
+  width: 100%;
+  height: 27.75rem;
+  margin: 17.25rem 0;
+  position: relative;
+}
+
+.end {
+  background-color: #CFE5FF;
+  height: 33.75rem;
+  margin-top: 17.25rem;
+  position: relative;
+}
+
+.endimg {
+  display: grid;
+  grid-template: 24.8125rem / 25.3125rem 22.75rem 46.625rem 25.3125rem;
+  justify-content: center;
+  width: 100%;
+  height: 24.8125rem;
+  position: absolute;
+  bottom: 0rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 10rem;
+  margin-top: 0;
+  position: relative;
+
+}
+
+.footerlink {
+  display: grid;
+  grid-template: 1.25rem / 19.5rem 10.4375rem 19.75rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 120rem;
+  height: 1.25rem;
+  position: absolute;
+  top: 2rem;
+}
+
+.codeit {
+  color: #9CA3AF;
+  margin-left: auto;
+}
+
