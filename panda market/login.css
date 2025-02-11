@@ -1,0 +1,170 @@
+body {
+    font-family: 'Pretendard';
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 640px;
+    height: 618px;
+    margin: 0 auto;
+    /* text-align: center; */
+    padding-top: 231px;
+    padding-bottom: 284px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* main {
+    
+    width: 640px;
+    height: 618px;
+    margin-top: 231px;
+    margin-left: 640px;
+    margin-right: 640px;
+} */
+
+.logo {
+    width: 396px;
+    height: 132px;
+    gap: 0px;
+    opacity: 0px;
+
+    margin: 0px 122px 40px 122px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email_text {
+    color: #1F2937;
+    /* padding: 0 593px 16px 0; */
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+}
+
+.password_all {
+    margin-top: 24px;
+}
+
+.password_text {
+    /* padding: 0 593px 16px 0; */
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+}
+
+.input_text {
+    background: #F3F4F6;
+    width: 592px;
+    height: 26px;
+    border-radius: 12px;
+    padding: 0px;
+    border: 0px;
+    margin-top: 16px;
+    gap: 24px;
+    padding: 15px 24px;
+    text-align: left;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+
+}
+
+.input_text:focus {
+    border: 1px solid #3692FF;
+    outline: none;
+}
+
+.email {
+    width: 640px;
+    height: 98px;
+    gap: 16px;
+    opacity: 0px;
+}
+
+.login_box {
+    background: #9CA3AF;
+    width: 640px;
+    height: 56px;
+    border-radius: 40px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+
+.login_box.active {
+    background: #3692FF;
+    cursor: pointer;
+}
+
+.login {
+    color: white;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    text-decoration-skip-ink: none;  
+    padding: 12px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.simple_login {
+    background: #E6F2FF;
+    width: 640px;
+    height: 74px;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+.simple_login_all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 23px;
+}
+
+.simple_ic {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer
+}
+
+.signup_all {
+    flex: auto;
+    text-align: center;
+    font-family: 'Pretendard';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    margin-top: 24px;
+}
+
+.signup_text {
+    color: #3692FF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+}

@@ -1,0 +1,429 @@
+/* ///////////////////// 기본설정 ///////////////////// */
+body {
+    font-family: 'Pretendard';
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    width: 100%;
+    margin: 0 auto;
+    /* text-align: center; */
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ///////////////////// 기본설정 ///////////////////// */
+
+
+/* ///////////////////// 상단바 ///////////////////// */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1920px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    height: 70px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.nav_all {
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 9.5px 200px;
+}
+
+.img_logo {
+    width: 153px;
+    height: 51px;
+    margin-left: 200px;
+    cursor: pointer
+}
+    
+.login {
+    color: #F3F4F6;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    background: #3692FF;
+    padding: 11px 43px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 200px;
+    cursor: pointer
+}
+/* ///////////////////// 상단바 ///////////////////// */
+
+
+/* ///////////////////// 배너 ///////////////////// */
+.banner {
+    background: #CFE5FF;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    align-items: flex-end;
+    position: relative;
+}
+
+.toptextall {
+    width: 1110px;
+    height: 340px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+.toptext {
+    width: 357px;
+    height: 260px;
+    z-index: 1;
+    display: block;
+    position: static;
+    margin-top: 40px;
+    margin-right: 7px;
+    margin-bottom: 40px;
+}
+.img_top {
+    display: flex;
+    margin: 0;
+}
+
+.maintext {
+    color: #374151;
+    width: 295px;
+    height: 112px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Pretendard';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: left;
+    display: block;
+    margin: 0;
+    padding-right: 62px;
+    padding-bottom: 32px;
+}
+
+.looking {
+    display: flex;
+    padding-bottom: 60px;
+}
+.lookingbutton {
+    color: #F9FAFB;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    background: #3692FF;
+    width: 357px;
+    height: 56px;
+    padding: 0 24px;
+    border-radius: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    cursor: pointer
+}
+/* ///////////////////// 배너 ///////////////////// */
+
+
+/* ///////////////////// 중간내용 ///////////////////// */
+.middle_all {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    width: 988px;
+    margin: 0px 466px 138px 466px;
+    gap: 0;
+}
+
+
+.stext {
+    color: #3692FF;
+    width: 60px;
+    height: 26px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    padding-right: 202px;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.rstext {
+    color: #3692FF;
+    /* width: 60px; */
+    height: 26px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: right;
+    padding-left: 202px;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.ltext {
+    color: #374151;
+    font-family: 'Pretendard';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    padding-top: 12px;
+    padding-bottom: 24px;
+    margin: 0;
+}
+.rltext {
+    color: #374151;
+    font-family: 'Pretendard';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+    text-align: right;
+    padding-top: 12px;
+    padding-bottom: 24px;
+    margin: 0;
+    width: 317px;
+    height: 112px;
+}
+
+.mtext {
+    color: #374151;
+    font-family: 'Pretendard';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left; 
+    margin: 0;   
+}
+.rmtext {
+    color: #374151;
+    font-family: 'Pretendard';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: right;   
+    margin: 0; 
+}
+
+.item-box1 {
+    width: 988px;
+    height: 444px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 138px 466px;
+    background: #FCFCFC;
+    gap: 64px;
+
+}
+
+.item-box2 {
+    width: 988px;
+    height: 444px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 138px 466px;
+    background: #FCFCFC;
+    gap: 64px;
+}
+
+.item-box3 {
+    width: 988px;
+    height: 444px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 138px 466px;
+    background: #FCFCFC;
+    gap: 64px;
+
+}
+
+.hometext {
+    /* width: Fixed (988px)px;
+    height: Hug (444px)px; */
+    gap: 64px;
+    opacity: 0px;
+    display: block;
+    margin-top: 103px;
+    margin-bottom: 103px;
+    /* margin-left: 64px; */
+    align-items: right;
+}
+
+.rhometext {
+    /* width: Fixed (988px)px;
+    height: Hug (444px)px; */
+    gap: 64px;
+    opacity: 0px;
+    display: block;
+    margin-top: 103px;
+    margin-bottom: 103px;
+    /* margin-right: 64px; */
+    align-items: right;
+}
+/* ///////////////////// 중간내용 ///////////////////// */
+
+
+/* ///////////////////// 밑 배너 ///////////////////// */
+.bottom {
+    background: #CFE5FF;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    align-items: flex-end;
+    position: relative;
+    margin: 0auto;
+}
+.allbottom {
+    /* z-index: 1; */
+    display: flex;
+    margin: 0;
+    /* margin: 143px 405px 0 405px; */
+    gap: 69px;
+}
+
+.bottomtext1 {
+    display: block;
+    position: static;
+    margin: 112.5px 0px;
+}
+
+.bottomtext2 {
+    width: 295px;
+    height: 112px;
+    gap: 0px;
+    opacity: 0px;
+    color: #374151;
+    font-family: 'Pretendard';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: left;
+    padding-bottom: 60px;
+    margin: 0;
+    /* margin: 112.5px 69px 112.5px 0px; */
+    /* padding-top: 112.5px;
+    padding-right: 69px;
+    padding-bottom: 112.5px; */
+}
+
+.img_bottom {
+    /* padding-top: 143px;
+    padding-right: 405px;
+    padding-left: 69px; */
+    display: flex;
+    margin: 0;
+}
+/* ///////////////////// 밑 배너 ///////////////////// */
+
+
+/* ///////////////////// 꼬리말 ///////////////////// */
+.footer {
+    background: #111827;
+    width: 100%;
+    max-width: 1920px;
+    height: 160px;
+    gap: 10px;
+    opacity: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.footerall {
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 200px 108px 200px;
+}
+
+.codeit {
+    color: #9CA3AF;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: left;
+    margin: 0;
+}
+.pp {
+    color: #E5E7EB;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: center;
+    cursor: pointer
+}
+.FAQ {
+    color: #E5E7EB;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: center;
+    cursor: pointer
+}
+
+.PPFAQ {
+    display: flex;
+
+    gap: 30px;
+}
+.ic {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer
+}
+/* ///////////////////// 꼬리말 ///////////////////// */
