@@ -33,3 +33,5 @@ function togglePasswordVisibility(input, button) {
 
 togglePasswordBtn.addEventListener('click', () => togglePasswordVisibility(passwordInput, togglePasswordBtn));
 toggleCheckPasswordBtn.addEventListener('click', () => togglePasswordVisibility(checkPasswordInput, toggleCheckPasswordBtn));
+
+//PullRequest Change
