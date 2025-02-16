@@ -43,7 +43,7 @@ inputName.forEach(input => {
 
             // 사인업페이지에서만 DB에 있는 이메일 중복검사
             if(input === inputEmail) {
-                if (isSignupPage) {
+                if (isSignupPage=== true) {
                     USER_DATA.some(value => value.email === value)
                     if(value === true) {
                         blurStyleOn(input, errorMessagePtag);
@@ -94,10 +94,10 @@ inputName.forEach(input => {
             // 비밀번호 불 일치할 경우
             } else if (input === inputPwdConfirm) {
                 if(input.value.trim() != inputPwd.value.trim()) {
-                    blurStyleOn(inputPwd, parentNextSibling);
+                    blurStyleOn(inputPwdConfirm, parentNextSibling);
                     parentNextSibling.innerText = "비밀번호가 일치하지 않습니다.";
                 }else {
-                    blurStyleOff(inputPwd, parentNextSibling);
+                    blurStyleOff(inputPwdConfirm, parentNextSibling);
                     parentNextSibling.innerText = "";
                 }
             }
