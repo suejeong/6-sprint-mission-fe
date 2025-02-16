@@ -51,14 +51,32 @@ div.login_hug{
     font-weight: 700;
 }
 
-.login_area input{
+.login_area input.focus {
     width: 592px;
     padding: 16px 24px;
     font-size: 16px;
     line-height: 26px; 
     background: #F3F4F6;
-    border: 0;
     border-radius: 12px;
+    box-shadow: none;
+    border-color: none;
+    border-width: 0;
+    border: none;
+}
+
+input.red {
+    border-width: 1px;
+    border: 1px solid #F74747 !important;
+}
+
+p.error-txt {
+    color : #F74747;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    padding-left: 16px;
+    margin-top: 8px;
+    display: none;
 }
 
 div.pwd_input_area {
@@ -71,7 +89,7 @@ div.pwd_input_area img.input_icon {
     top: 20px;
 }
 
-.btn {
+.btn  {
     display: flex;
     align-items: center;
     justify-content: center; /* 콘텐츠를 가로 중앙 정렬 */
@@ -81,18 +99,19 @@ div.pwd_input_area img.input_icon {
     margin: 24px 0;
     font-size: 20px;
     line-height: 32px; 
-    background: #9CA3AF;
     border: 0;
     border-radius: 40px;
     cursor: pointer;
     color: #F3F4F6;
     font-weight: 600;
-}
-
-.btn:hover,
-.btn:active {
     border: 1px solid #3692ff;
     background-color: #3692FF;
+}
+
+ .disabled {
+    background: #9CA3AF;
+    border: none;
+    cursor: pointer;
 }
 
 .social_login {
