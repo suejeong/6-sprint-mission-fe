@@ -1,31 +1,53 @@
-import { useState } from "react";
 import "./App.css";
+import "./ProductList.css";
+import ErrorBoundary from "./ErrorBoundary";
+import { ProductList } from "./ProductList";
+import { Nav } from "./Nav";
+import { useState } from "react";
 
 function App() {
-	const [count, setCount] = useState(0);
+	//const [loading, setLoading] = useAsync(false);
+	const [order, setOrder] = useState("createdAt");
 
 	return (
-		<>
-			<div>
-				<a href="https://vite.dev" target="_blank">
-					안녕!
-				</a>
-				<a href="https://react.dev" target="_blank"></a>
+		<div className="layout">
+			<Nav />
+			<div class="item box02">
+				<div class="contents">
+					<div class="top">
+						<h3 className="best">베스트 상품</h3>
+						<ProductList
+							className="product-list"
+							order="favorite"
+							limit={4}
+						/>
+						<h3>최신 상품</h3>
+						<div>
+							<button onClick={() => setOrder("createdAt")}>
+								최신순
+							</button>
+							<button onClick={() => setOrder("rating")}>
+								인기순
+							</button>
+						</div>
+						<ProductList
+							className="product-list"
+							order="recent"
+							limit={10}
+						/>
+					</div>
+				</div>
 			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		</div>
 	);
 }
 
-export default App;
+function AppWithErrorBoundary() {
+	return (
+		<ErrorBoundary>
+			<App />
+		</ErrorBoundary>
+	);
+}
+
+export default AppWithErrorBoundary;
