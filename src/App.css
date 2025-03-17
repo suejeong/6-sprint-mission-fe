@@ -1,0 +1,48 @@
+#root {
+	margin: 0 auto;
+	padding: 0rem;
+	width: 100%;
+	background-color: #fcfcfc;
+}
+
+.layout {
+	display: flex; /* 텍스트 정렬을 위한 Flexbox */
+	flex-direction: column;
+	margin: 0 auto; /* 중앙 정렬 */
+	row-gap: 0px; /* 행 간의 간격 */
+
+	h3 {
+		font-size: 20px;
+		line-height: 32px;
+		display: inline-block;
+	}
+
+	.best {
+		margin-top: 96px;
+	}
+}
+
+.contents {
+	display: flex;
+	justify-content: space-between; /* 좌우로 요소를 배치 */
+	align-items: center; /* 세로 가운데 정렬 */
+}
+
+@media (max-width: 744px) {
+	.layout h3 {
+		margin-left: 24px;
+	}
+}
+@media (max-width: 376px) {
+	.layout {
+		display: flex;
+	}
+
+	.contents,
+	.top {
+		width: 344px;
+	}
+	.top h3 {
+		margin-left: 16px;
+	}
+}
