@@ -7,6 +7,9 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const rootPath = path.join(__dirname, '..');
+
+app.use(express.static(path.join(rootPath, 'dist')));
 
 const app = express();
 const PORT = process.env.PORT || 7777;
@@ -21,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // 리액트 라우팅 대응 (SPA)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(rootPath, 'dist', 'index.html'));
 });
 
 // 서버 실행
