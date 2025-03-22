@@ -21,7 +21,8 @@ export function WriteArticle() {
 
         try {
             const response = await postArticle({ title, content }); // postArticle은 promise를 반환함, await를 사용해야 Response.data를 제대로 받을 수 있음
-            setSuccess(response.data.message || '데이터 기록 성공'); // 서버에서 메시지를 보내줬으면 그걸 쓰고, 아니면 프론트에서 지정한 데이터 기록 성공이라는 텍스트를 출력하겠다
+            setSuccess(`"${response.data.title}" 글이 등록되었습니다!`); // 서버로 보낸 data의 title을 출력
+            console.log(response.data);
             setTitle(''); // 입력 성공하면 그 다음 내용을 입력할 수 있게 초기화 함
             setContent(''); // 초기화
         } catch (e) { // 비동기 작업이 실패하면 catch로 넘어옴, e는 에러 객체
