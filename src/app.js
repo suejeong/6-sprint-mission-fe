@@ -2,6 +2,19 @@ import express from "express";
 import cors from 'cors';
 import router from './modules/index.module.js';
 import { PrismaClient } from "@prisma/client";
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// 정적 파일 서빙
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// 리액트 라우팅 대응 (SPA)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 const app = express();
 const PORT = process.env.PORT || 7777;
