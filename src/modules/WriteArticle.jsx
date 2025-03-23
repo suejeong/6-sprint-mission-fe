@@ -22,7 +22,7 @@ export function WriteArticle() {
         try {
             const response = await postArticle({ title, content }); // postArticle은 promise를 반환함, await를 사용해야 Response.data를 제대로 받을 수 있음
             console.log("응답 객체 :" , response);
-            setSuccess(`"${response.title}" 글이 등록되었습니다!`); // 서버로 보낸 data의 title을 출력
+            setSuccess(`"${response.title}" 글이 등록되었습니다! 새로고침 버튼을 클릭하세요!`); // 서버로 보낸 data의 title을 출력
             setTitle(''); // 입력 성공하면 그 다음 내용을 입력할 수 있게 초기화 함
             console.log("Reset 완료")
             setContent(''); // 초기화

@@ -57,13 +57,14 @@ articlesRouter.get("/", async (req, res, next) => {
 articlesRouter.patch("/:id", async (req, res, next) => {
     try {
         const id = Number(req.params.id);
+        const { title, content } = req.body;
         const post = await prisma.articles.findUnique({
             where: { id: id },
-            data: req.body,
+            data: { title, content },
         });
-        if (!post) throw new Exception(404, "존재하지 않는 게시글입니다");
+        if (!update) throw new Exception(404, "존재하지 않는 게시글입니다");
 
-        res.json(post);
+        res.json(update);
     } catch (e) {
         next(e);
     }

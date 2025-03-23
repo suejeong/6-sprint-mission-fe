@@ -11,3 +11,8 @@ export const getArticles = async () => {
     const response = await axios.get(`${BASE_URL}/articles`);
     return response.data;
 }
+
+export const patchArticles = async (id, data) => {
+    const response = await axios.patch(`${BASE_URL}/articles/${id}`, data);
+    return response.data;
+}
