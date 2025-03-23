@@ -40,5 +40,10 @@
   },
   "prisma": {
     "schema": "./src/db/prisma/schema.prisma"
-  }
+  },
+  "description": "",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
