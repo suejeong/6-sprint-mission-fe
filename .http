@@ -1,4 +1,4 @@
-POST http://localhost:7777/articles
+POST https://pdmarket.onrender.com/articles
 Content-Type: application/json
 
 {

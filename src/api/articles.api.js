@@ -8,10 +8,6 @@ export const postArticle = async (data) => {
 }
 
 export const getArticles = async () => {
-    const response = await axios.get(`${BASE_URL}/articles`, { // await로 서버 응답 기다림
-        title, //req.body로 받는 데이터
-        content,
-        createdAt,
-    });
+    const response = await axios.get(`${BASE_URL}/articles`);
     return response.data; // 서버가 보내준 데이터만 클라이언트에 전달
 }

@@ -23,6 +23,7 @@ articlesRouter.post("/", async (req, res, next) => { // /articles로 들어온 a
     } catch (e) {
         next(e);
         console.error("🔥 서버 에러:", e);
+
     }
 });
 
@@ -32,15 +33,20 @@ articlesRouter.post("/", async (req, res, next) => { // /articles로 들어온 a
 articlesRouter.get("/", async (req, res, next) => {
     try {
         const articles = await prisma.articles.findMany({
-            data: {
-                title,
-                content,
-                createdAt
+            select: {
+                id: true,
+                title: true,
+                content: true,
+                createdAt: true,
+            },
+            orderBy: {
+                createdAt: 'desc'
             }
         })
         res.json(articles);
     } catch (e) {
-        next(e);
+        console.error("🔥 Prisma 또는 서버 에러:", e); // ← 여기에 찍혀야 원인을 알 수 있어!
+        res.status(500).json({ message: "서버 오류", error: e.message });
     }
 });
 
