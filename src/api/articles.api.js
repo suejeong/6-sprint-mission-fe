@@ -9,5 +9,5 @@ export const postArticle = async (data) => {
 
 export const getArticles = async () => {
     const response = await axios.get(`${BASE_URL}/articles`);
-    return response.data; // 서버가 보내준 데이터만 클라이언트에 전달
+    return response.data;
 }
