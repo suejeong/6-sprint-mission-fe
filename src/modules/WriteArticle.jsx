@@ -21,9 +21,10 @@ export function WriteArticle() {
 
         try {
             const response = await postArticle({ title, content }); // postArticle은 promise를 반환함, await를 사용해야 Response.data를 제대로 받을 수 있음
-            console.log(response.data);
+            console.log("응답 객체 :" , response.data);
             setSuccess(`"${response.data.title}" 글이 등록되었습니다!`); // 서버로 보낸 data의 title을 출력
             setTitle(''); // 입력 성공하면 그 다음 내용을 입력할 수 있게 초기화 함
+            console.log("Reset 완료")
             setContent(''); // 초기화
         } catch (e) { // 비동기 작업이 실패하면 catch로 넘어옴, e는 에러 객체
             setError(e.response?.data?.message || e.message); // 서버가 보낸 에러메시지가 없다면 기본 에러메시지를 출력
@@ -49,9 +50,11 @@ export function WriteArticle() {
                     setTitle(e.target.value) : setTitle을 input 태그의 값 자체로 반영
                  */ }
                 <h4>내용</h4>
-                <textarea type=""  value={content} onChange={(e) => setContent(e.target.value)}/>
+                <textarea  value={content} onChange={(e) => setContent(e.target.value)}/>
                 <div>
                     <button type = "submit" disabled={loading}>{loading ? '전송 중...' : '전송하기'} {/* loading이 ture이면 disabled 활성화 */} </button>
+                    {success && <p>{success}</p>}
+                    {error && <p>{success}</p>}
                 </div>
             </form>
         </div>
