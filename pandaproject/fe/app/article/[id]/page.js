@@ -8,38 +8,45 @@ import { useParams } from 'next/navigation';
 import ArticleHeader from '../../../components/ui/article/detail/ArticleHeader'
 import ArticleContent from '../../../components/ui/article/detail/ArticleContent'
 import WriteReply from '../../../components/ui/article/detail/WriteReply'
-import ReplyList from '../../../components/ui/article/detail/ReplyList'
+import CommentList from '../../../components/ui/article/detail/CommentList'
+import { getArticle } from "../../../app/api/article/[id]/route"
+import { getComments } from "../../../app/api/article/[id]/route"
+import { useRouter } from 'next/navigation';
 
-function ArticlePage() {
+export default function ArticlePage() {
     const { id } = useParams();
     const [article, setArticle] = useState([]);
+    const [comments, setComments] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
+
 
     useEffect(() => {
-        if (!id) return;
         const fetchArticle = async () => {
+            setLoading(true);
             try {
-                const res = await axios.get(
-                    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/articles/${id}`
-                );
-                setArticle(res.data);
-            } catch (error) {
-                console.error("🚨 에러 발생:", error);
+                const data = await getArticle({ id });
+                const commentData = await getComments({ id });
+                setArticle(data);
+                setComments(commentData);
+            } catch (e) {
+                console.error(e);
+                alert("서버 에러 입니다")
+            } finally {
+                setLoading(false);
             }
-        };
-
+        }
         fetchArticle();
-    }, []);
+    }, [])
     return (
         <PageLayout>
             <ArticleHeader title={article.title} />
             <ArticleContent content={article.content} />
             <WriteReply />
-            <ReplyList />
+            <CommentList comments={comments} id={id} />
             <div className="flex justify-center mt-10">
-                <button className="btn-base">목록으로 돌아가기</button>
+                <button className="btn-base" onClick={() => router.back()}>목록으로 돌아가기</button>
             </div>
         </PageLayout>
     )
 }
-
-export default ArticlePage;

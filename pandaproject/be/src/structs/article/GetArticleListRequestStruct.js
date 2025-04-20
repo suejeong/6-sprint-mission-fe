@@ -30,8 +30,8 @@ export const GetArticleListRequestStruct = object({
         0,
     ),
     take: defaulted(
-        coerce(max(min(integer(), 1), 10), string(), (value) => Number.parseInt(value, 10)),
-        10,
+        coerce(max(min(integer(), 1), 30), string(), (value) => Number.parseInt(value, 10)),
+        30,
     ),
     orderBy: optional(enums(['recent'])),
     word: optional(nonempty(string())),

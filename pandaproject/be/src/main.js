@@ -28,7 +28,10 @@ import { GetProductListRequestStruct } from './structs/product/GetProductListReq
 dotenv.config({ path: path.join(path.resolve(), '.env') });
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ['https://yourfrontend.netlify.app'],
+    credentials: true,
+}));
 app.use(express.json());
 app.use(
     '/api-docs',
@@ -206,8 +209,8 @@ app.get(
         const articleEntities = await prismaClient.article.findMany({
             cursor: cursor
                 ? {
-                      id: cursor,
-                  }
+                    id: cursor,
+                }
                 : undefined,
             take: take + 1,
             orderBy: orderBy === 'recent' ? { id: 'desc' } : { id: 'asc' },
@@ -296,8 +299,8 @@ app.get(
             return await tx.comment.findMany({
                 cursor: cursor
                     ? {
-                          id: cursor,
-                      }
+                        id: cursor,
+                    }
                     : undefined,
                 take: take + 1,
                 where: {
@@ -532,19 +535,19 @@ app.get(
 
         const whereClause = word
             ? {
-                  OR: [
-                      {
-                          name: {
-                              contains: word,
-                          },
-                      },
-                      {
-                          description: {
-                              contains: word,
-                          },
-                      },
-                  ],
-              }
+                OR: [
+                    {
+                        name: {
+                            contains: word,
+                        },
+                    },
+                    {
+                        description: {
+                            contains: word,
+                        },
+                    },
+                ],
+            }
             : undefined;
 
         const matchedProductCount = await prismaClient.product.count({ where: whereClause });
@@ -629,8 +632,8 @@ app.get(
             return await tx.comment.findMany({
                 cursor: cursor
                     ? {
-                          id: cursor,
-                      }
+                        id: cursor,
+                    }
                     : undefined,
                 take: take + 1,
                 where: {

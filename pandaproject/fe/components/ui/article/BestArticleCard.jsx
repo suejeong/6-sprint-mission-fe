@@ -17,7 +17,7 @@ function BestArticleCard() {
         p-6
       `}>
         <div className="flex justify-between mb-10">
-          <div className='flex-1'>텍스트</div>
+          <div className='flex-1'>타이틀</div>
           <div>이미지 영역</div>
         </div>
         <div  className="flex justify-between gap-1.5">

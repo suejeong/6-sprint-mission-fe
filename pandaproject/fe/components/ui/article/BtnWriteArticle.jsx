@@ -6,7 +6,7 @@ import React from 'react'
 function BtnWriteArticle() {
   const router = useRouter();
   const handleClick = () => {
-    router.push(`/write`);
+    router.push(`/article/write`);
   }
   return (
     <div>
