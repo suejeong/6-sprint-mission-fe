@@ -28,20 +28,8 @@ import { GetProductListRequestStruct } from './structs/product/GetProductListReq
 dotenv.config({ path: path.join(path.resolve(), '.env') });
 
 const app = express();
-const allowedOrigins = [
-    'http://localhost:3001',
-    'https://6-sprint-mission-exy8s0ib6-sues-projects-3420d095.vercel.app',
-];
-
 app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true,
+    origin: '*',
 }));
 
 app.use(express.json());
