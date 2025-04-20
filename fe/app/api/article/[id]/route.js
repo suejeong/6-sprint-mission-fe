@@ -8,11 +8,3 @@ export async function GET(req, { params }) {
     return Response.json({ id });
 }
 
-export async function GET(req, { params }) {
-    const id = params.id;
-    const comments = await db.comments.findMany({
-        where: { articleId: Number(id) },
-    });
-
-    return Response.json(comments);
-}
