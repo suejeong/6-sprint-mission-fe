@@ -4,7 +4,7 @@ import PageLayout from '../../../components/common/PageLayout'
 import H2Title from '../../../components/common/H2Title'
 import { useRouter } from 'next/navigation';
 
-export default function page() {
+export default function WritePage() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const router = useRouter();
