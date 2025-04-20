@@ -2,9 +2,10 @@ import axios from 'axios'; // 현재 파일에서 axios를 가져오기 위해 �
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-export const getArticle = async ({ id }) => {
+export async function GET(req, { params }) {
+    const { id } = params;
     const response = await axios.get(`${BASE_URL}/articles/${id}`);
-    return response.data;
+    return Response.json({ id });
 }
 
 export const getComments = async ({ id }) => {

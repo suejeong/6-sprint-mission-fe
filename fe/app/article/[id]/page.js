@@ -9,7 +9,6 @@ import ArticleHeader from '../../../components/ui/article/detail/ArticleHeader'
 import ArticleContent from '../../../components/ui/article/detail/ArticleContent'
 import WriteReply from '../../../components/ui/article/detail/WriteReply'
 import CommentList from '../../../components/ui/article/detail/CommentList'
-import { getArticle } from "../../../app/api/article/[id]/route"
 import { getComments } from "../../../app/api/article/[id]/route"
 import { useRouter } from 'next/navigation';
 
@@ -25,19 +24,21 @@ export default function ArticlePage() {
         const fetchArticle = async () => {
             setLoading(true);
             try {
-                const data = await getArticle({ id });
+                const data = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/article/${id}`);
                 const commentData = await getComments({ id });
-                setArticle(data);
+                setArticle(res.data);
                 setComments(commentData);
             } catch (e) {
                 console.error(e);
                 alert("서버 에러 입니다")
+                console.log("🔍 호출 URL:", `${process.env.NEXT_PUBLIC_API_BASE_URL}/article/${id}`);
+
             } finally {
                 setLoading(false);
             }
         }
         fetchArticle();
-    }, [])
+    }, [id])
     return (
         <PageLayout>
             <ArticleHeader title={article.title} />
