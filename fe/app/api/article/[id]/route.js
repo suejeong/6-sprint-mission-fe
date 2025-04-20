@@ -8,7 +8,11 @@ export async function GET(req, { params }) {
     return Response.json({ id });
 }
 
-export const getComments = async ({ id }) => {
-    const response = await axios.get(`${BASE_URL}/articles/${id}/comments`);
-    return response.data.data;
+export async function GET(req, { params }) {
+    const id = params.id;
+    const comments = await db.comments.findMany({
+        where: { articleId: Number(id) },
+    });
+
+    return Response.json(comments);
 }

@@ -29,8 +29,10 @@ dotenv.config({ path: path.join(path.resolve(), '.env') });
 
 const app = express();
 app.use(cors({
-    origin: ['https://yourfrontend.netlify.app'],
-    credentials: true,
+    //origin: ['http://localhost:3001', 'https://6-sprint-mission-p1ktj9wk5-sues-projects-3420d095.vercel.app'],
+    origin: '*', // 🔥 개발용: 모든 origin 허용
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    credentials: false,
 }));
 app.use(express.json());
 app.use(
