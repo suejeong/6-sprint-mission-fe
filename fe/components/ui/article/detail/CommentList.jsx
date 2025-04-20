@@ -6,8 +6,12 @@ import ic_profile from '../../../../app/images/ic_profile.png'
 import Image from 'next/image';
 import NhoursBefore from '../../../common/NhoursBefore'
 
+
 function CommnetList({comments}) {
 
+  if (!Array.isArray(comments)) {
+    return <div>댓글이 없습니다.</div>;
+  }
 
   return (
     <div>
