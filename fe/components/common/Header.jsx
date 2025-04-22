@@ -3,10 +3,12 @@
 import React from 'react'
 import Menu from "../ui/Menu"
 import Login from "../ui/Login"
-import Link from 'next/link'
+import H1Title from './H1Title';
 
 function Header() {
+  console.log("💥 Header 렌더링 됨");
   return (
+    
     <div className='border-1 border-[#dfdfdf] flex fixed bg-[#ffffff] h-17.5 top-0 right-0 left-0 z-50'>
       <div className={`
         max-w-screen-xl 
@@ -19,13 +21,7 @@ function Header() {
         h-17.5
         top-0 right-0 left-0
       `}>
-        <Link href="/"><h1 className={`
-          sm:text-xl 
-          md:text-2xl
-          lg:text-2xl
-          text-blue-500 
-          font-bold
-        `}>판다마켓</h1></Link>
+        <H1Title />
         <Menu />
         <Login />
       </div>
