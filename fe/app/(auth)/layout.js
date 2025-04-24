@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function AuthLayout({ children }) {
     return (
-        <main className="flex justify-center items-center fixed inset-0">{children}</main>
+        <main className="flex justify-center items-center py-20">{children}</main>
     );
 }
 

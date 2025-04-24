@@ -8,8 +8,8 @@ import Image from 'next/image'
 
 const  bigLogo = { 
     src : logo_big,
-    imageClass: " sm:w-13 sm:h-13 md:w-[106px] md:h-[106px]",
-    textClass: "sm:text-[2rem] md:text-[4.125rem]"
+    imageClass: " w-13 h-13 md:w-[106px] md:h-[106px]",
+    textClass: "text-[2rem] md:text-[4rem] text-[700] lg:ml-3"
 }
 
 const titleType = {
