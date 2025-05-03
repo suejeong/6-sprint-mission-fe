@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import ActionDropDown from './ActionDropDown'
+import ActionDropDown from '../../ActionDropDown'
 import ic_profile from '../../../../app/images/ic_profile.png'
 import Image from 'next/image';
 import NhoursBefore from '../../../common/NhoursBefore'

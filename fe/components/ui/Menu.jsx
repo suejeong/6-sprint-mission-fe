@@ -9,7 +9,7 @@ function Menu() {
 
   const navItems = [
     { label: '자유게시판', path: '/article'},
-    { label: '중고마켓', path: '/article/write' }
+    { label: '중고마켓', path: '/items' }
   ];
 
   return (

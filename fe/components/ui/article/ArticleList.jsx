@@ -6,8 +6,9 @@ import ic_profile from '../../../app/images/ic_profile.png';
 import img_notebook from '../../../app/images/img_notebook.png';
 import FormatedDate from '../../common/FormattedDate'
 import icon_like_off from '../../../app/images/Icon_like_off.png'
+import Writer from "./detail/Writer";
 
-export default function ArticleList({ articles }) {
+export default function ArticleList({ articles = []}) {
   const router = useRouter();
 
   const handleDetail = (id) => {
@@ -27,8 +28,8 @@ export default function ArticleList({ articles }) {
               <div>
                 <Image src={ic_profile} alt="프로필이미지" className="h-6 w-6" />
               </div>
-              <span className="sm:text-sm text-[#4B5563] font-[400]">총명한 판다</span>
-              <span className="flex-1 sm:text-sm text-[#4B5563] font-[400]">
+              <Writer>총명한 판다</Writer>
+              <span className="flex-1">
                 <FormatedDate createdAt={article.createdAt} />
               </span>
               <div className="flex justify-between items-center gap-2">

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import  ic_kebab  from '../../../../app/images/ic_kebab.png'
+import ic_kebab  from '../../app/images/ic_kebab.png'
 import Image from 'next/image';
 
 function ActionDropDown() {
