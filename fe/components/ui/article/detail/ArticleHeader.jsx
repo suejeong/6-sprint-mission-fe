@@ -1,6 +1,6 @@
 import React from 'react'
-import ArticleWriter from './ArticleWriter'
-import ActionDropDown from './ActionDropDown'
+import Writer from './Writer'
+import ActionDropDown from '../../ActionDropDown'
 import LikedCount from './LikedCount'
 
 function ArticleHeader({ title }) {
@@ -11,7 +11,7 @@ function ArticleHeader({ title }) {
           <ActionDropDown />
         </div>
         <div className="flex justify-start gap-6 mb-4">
-          <ArticleWriter />
+          <Writer />
           <LikedCount />
         </div>
     </div>

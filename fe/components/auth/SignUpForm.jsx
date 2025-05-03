@@ -1,98 +1,169 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import SocialLogin from './SocialLogin'
-import AuthInput from '../ui/auth/AuthInput'
-import BtnPrimary from '../common/BtnPrimary'
-import AreYouAlreadyAMember from '../common/AreYouAlreadyAMember'
-import { useRouter } from 'next/navigation'
+import React, { useEffect, useState } from "react";
+import SocialLogin from "./SocialLogin";
+import AuthInput from "../ui/auth/AuthInput";
+import BtnPrimary from "../common/BtnPrimaryBig";
+import AreYouAlreadyAMember from "../common/AreYouAlreadyAMember";
+import { useRouter } from "next/navigation";
+import { useAuth } from "../../provider/AuthProvider";
+import Modal from "../modal/Modal";
+import { loginAction } from "../../lib/actions/auth";
 
 function SignUpForm() {
-    const [ email, setEmail ] = useState("");
-    const [ nickname, setNickname ] = useState("");
-    const [ password, setPassword ] = useState("");
-    const [ confirmPassword, setConfirmPassword ] = useState("");
-    const signupValid = email.includes("@") && nickname.length > 0 && ( password === confirmPassword && password.length > 0 );
-    
-    let isEmailValid = "";
-    let isConfirmPasswordValid = "";
-    if(email.length > 0 && !email.includes("@")) {
-        isEmailValid = "wrongType";
-    }
-    
-    if(!password || !confirmPassword) {
-        isConfirmPasswordValid = null;
-    }
-    if (!(password === confirmPassword)) {
-        isConfirmPasswordValid = "wrongType";
-    } 
-    
-    const router = useRouter();
-    const [ isSummiting, setIsSummiting ] = useState(false);
-    const handleSignup = async () => {
-        if(isSummiting) return;
-        setIsSummiting(true);
-        try {
-            const res = await fetch("/api/signup", {
-                method: "POST",
-                headers: { "Content-Type" : "application/json"},
-                body: JSON.stringify({ email, password}),
-            })
+	const [email, setEmail] = useState("");
+	const [nickname, setNickname] = useState("");
+	const [password, setPassword] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
+	const [isEmailValid, setIsEmailValid] = useState("");
+	const [isConfirmPasswordValid, setIsConfirmPasswordValid] = useState("");
+	const { setUser } = useAuth();
+	const [isOpen, setIsOpen] = useState(false);
+	const [btnLabel, setBtnLabel] = useState("");
+	const [comment, setComment] = useState("");
+	const signupValid =
+		email.includes("@") &&
+		nickname.length > 0 &&
+		password === confirmPassword &&
+		password.length > 0;
 
-            if (!res.ok) {
-                const { message } = await res.json();
-                alert(message || "회원가입 실패");
-            }else {
-                alert("회원가입 성공!");
-                router.push("/login");
-            }
-        } catch (error) {
-            alert("서버 오류")
-        }finally {
-            setIsSummiting(false);
-        }
-    }
+	// 이메일 유효성 검사
+	useEffect(() => {
+		if (email.length > 0 && !email.includes("@")) {
+			setIsEmailValid("wrongType");
+		}
+	}, [email]);
 
+	// 비밀번호 유효성 검사
+	useEffect(() => {
+		if (!password || !confirmPassword) {
+			setIsConfirmPasswordValid(null);
+		} else if (password !== confirmPassword) {
+			setIsConfirmPasswordValid("wrongType");
+		} else if (password.length < 8) {
+			setIsConfirmPasswordValid("length");
+		}
+	}, [password, confirmPassword]);
 
-  return (
-    <div  className="w-full mt-8 md:mt-14 px-4 ">
-        <form className="flex flex-col gap-6">
-            <AuthInput 
-                type="text" 
-                title="이메일" 
-                placeholder ="이메일을 입력해 주세요" 
-                value={email} 
-                onChange = {(e) => setEmail(e.target.value)}
-                errorType={isEmailValid}
-            />
-            <AuthInput 
-                type="text" 
-                title="닉네임" 
-                placeholder ="닉네임을 입력해 주세요" 
-                value={nickname} 
-                onChange = {(e) => setNickname(e.target.value)}
-            />
-            <AuthInput 
-                type="password" 
-                title="비밀번호" 
-                placeholder ="비밀번호를 입력해 주세요" 
-                value={password} 
-                onChange = {(e) => setPassword(e.target.value)}
-            />
-            <AuthInput 
-                type="password" 
-                title="비밀번호 확인" 
-                placeholder ="비밀번호를 다시 한 번 입력해 주세요" 
-                value={confirmPassword} 
-                onChange = {(e) => setConfirmPassword(e.target.value)}
-                errorType={isConfirmPasswordValid}
-            />
-            <BtnPrimary disabled={!signupValid} onClick ={handleSignup}>회원가입</BtnPrimary>
-        </form>
-        <SocialLogin />
-        <AreYouAlreadyAMember pageType="signup"/>
-    </div>
-  )
+	// 회원가입 버튼 클릭 후 모달 오픈
+	const openModal = (type, errorMessage) => {
+		setIsOpen(true);
+		setBtnLabel("확인");
+		if (type === "success") {
+			setComment("회원가입 성공");
+		}
+		if (errorMessage) {
+			setComment(errorMessage);
+		}
+	};
+
+	const router = useRouter();
+	const [isSummiting, setIsSummiting] = useState(false);
+	const handleSignup = async (e) => {
+		e.preventDefault();
+		if (isSummiting) return; // 중복클릭 방지
+		setIsSummiting(true);
+		console.log(
+			"요청 url",
+			`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/signUp`
+		);
+		try {
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/signUp`,
+				{
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						email,
+						nickname,
+						password,
+						passwordConfirmation: confirmPassword,
+					}),
+				}
+			);
+
+			if (res.ok) {
+				//const data = await res.json();
+				const data = await loginAction({ email, password });
+				localStorage.setItem("accessToken", data.accessToken);
+				localStorage.setItem("refreshToken", data.refreshToken);
+				setUser(data.user);
+				openModal("success");
+			} else {
+				const errorData = await res.json();
+				console.error("❌ 회원가입 실패 응답:", errorData);
+				openModal(
+					"",
+					errorData.message || errorData.error || "회원가입 실패"
+				);
+			}
+		} catch (error) {
+			console.error("🔥 서버 오류 상세:", error);
+			alert(error.message);
+		} finally {
+			setIsSummiting(false);
+		}
+	};
+
+	const handleCloseModal = () => {
+		setIsOpen(false);
+		if (comment === "회원가입 성공") {
+			router.push("/items");
+		}
+	};
+
+	return (
+		<div className="w-full mt-8 md:mt-14 px-4 ">
+			<form className="flex flex-col gap-6" onSubmit={handleSignup}>
+				<AuthInput
+					type="text"
+					title="이메일"
+					placeholder="이메일을 입력해 주세요"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+					errorType={isEmailValid}
+				/>
+				<AuthInput
+					type="text"
+					title="닉네임"
+					placeholder="닉네임을 입력해 주세요"
+					value={nickname}
+					onChange={(e) => setNickname(e.target.value)}
+				/>
+				<AuthInput
+					type="password"
+					title="비밀번호"
+					placeholder="비밀번호를 입력해 주세요"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+				<AuthInput
+					type="password"
+					title="비밀번호 확인"
+					placeholder="비밀번호를 다시 한 번 입력해 주세요"
+					value={confirmPassword}
+					onChange={(e) => setConfirmPassword(e.target.value)}
+					errorType={isConfirmPasswordValid}
+				/>
+				<BtnPrimary
+					type="submit"
+					text="text-xl"
+					disabled={!signupValid}
+				>
+					회원가입
+				</BtnPrimary>
+			</form>
+			<SocialLogin />
+			<AreYouAlreadyAMember pageType="signup" />
+			{isOpen && (
+				<Modal
+					text={comment}
+					btnLabel={btnLabel}
+					onClick={handleCloseModal}
+				/>
+			)}
+		</div>
+	);
 }
 
-export default SignUpForm
+export default SignUpForm;
