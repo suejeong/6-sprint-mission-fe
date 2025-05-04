@@ -45,7 +45,7 @@ function Header() {
 								alt="프로필 이미지"
 								className="w-10 h-10"
 							/>
-							{user.nickname}f
+							{user.nickname}
 							<BtnPrimarySmall
 								onClick={async () => {
 									await logout();

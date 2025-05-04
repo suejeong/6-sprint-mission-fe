@@ -11,6 +11,7 @@ import WriteReply from '../../../components/ui/article/detail/WriteReply'
 import CommentList from '../../../components/ui/article/detail/CommentList'
 import { useRouter } from 'next/navigation';
 import BtnPrimaryBig from '../../../components/common/BtnPrimaryBig';
+import { useAuth } from '../../../provider/AuthProvider';
 
 export default function ArticlePage() {
     const { id } = useParams();
@@ -18,6 +19,7 @@ export default function ArticlePage() {
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    const { user } = useAuth();
 
 
     useEffect(() => {
@@ -45,7 +47,7 @@ export default function ArticlePage() {
             <WriteReply />
             {/* <CommentList comments={comments} id={id} /> */}
             <div className="flex justify-center mt-10">
-                <BtnPrimaryBig type="button" onClick={() => router.back()}>목록으로 돌아가기</BtnPrimaryBig>
+                <BtnPrimaryBig type="button" px="px-8" onClick={() => router.back()}>목록으로 돌아가기</BtnPrimaryBig>
             </div>
         </PageLayout>
     )
