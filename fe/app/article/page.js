@@ -19,8 +19,8 @@ function ArticlePage() {
         const fetchArticles = async () => {
             setLoading(true);
             try {
-                const reponse = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/articles?orderBy=recent`);
-                setArticles(reponse.data.data);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/articles?orderBy=recent`);
+                setArticles(response.data.list);
             } catch (e) {
                 console.error(e);
                 alert("서버 에러 입니다")

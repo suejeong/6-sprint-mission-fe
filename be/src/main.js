@@ -28,8 +28,18 @@ import { GetProductListRequestStruct } from './structs/product/GetProductListReq
 dotenv.config({ path: path.join(path.resolve(), '.env') });
 
 const app = express();
+const originUrl = ["https://pdmarket.onrender.com", "https://6-sprint-mission-fe-ho4r.vercel.app", "http://localhost:3001", "https://panda-market-api.vercel.app"]
+
 app.use(cors({
-    origin: '*',
+    origin: function (origin, callback) {
+        console.log("요청 Origin:", origin);
+        if (!origin || originUrl.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true,
 }));
 
 app.use(express.json());
