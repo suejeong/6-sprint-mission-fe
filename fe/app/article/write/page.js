@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react'
-import PageLayout from '../../../components/common/PageLayout'
-import H2Title from '../../../components/common/H2Title'
+import PageLayout from '@/components/common/PageLayout'
+import H2Title from '@/components/common/H2Title'
 import { useRouter } from 'next/navigation';
 
 export default function WritePage() {
