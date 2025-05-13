@@ -15,7 +15,7 @@ export default function Page() {
     const [tags, setTags] = useState([]);
     const [isSummiting, setIsSummiting] = useState(false);
 
-    const [title, setTitle] = useState("");
+    const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [message, setMessage] = useState("");
@@ -46,7 +46,7 @@ export default function Page() {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/product`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title, description, price: Number(price), tags })
+            body: JSON.stringify({ name, description, price: Number(price), tags })
         });
 
         if (res.ok) {
@@ -66,9 +66,9 @@ export default function Page() {
                         <BtnPrimarySmall type="submit">등록</BtnPrimarySmall>
                     </div>
                     <WriteInput
-                        name="title"
+                        name="name"
                         type="text"
-                        value={title}
+                        value={name}
                         placeholder="상품명을 입력해 주세요"
                         onChange={(e) => setTitle(e.target.value)}
                         required
@@ -85,7 +85,7 @@ export default function Page() {
                     />
                     <WriteInput
                         type="text"
-                        title="태그"
+                        name="tags"
                         value={input}
                         placeholder="태그를 입력해 주세요"
                         onChange={(e) => setInput(e.target.value)}
