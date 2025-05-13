@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+import app from './app.js'
 
 const app = express();
 const PORT = 4000;
