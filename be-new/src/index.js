@@ -1,6 +1,5 @@
-const express = require("express");
-const cors = require("cors");
-
+import express from "express";
+import cors from "cors";
 import productRoutes from './routes/product.js';
 
 const app = express();
