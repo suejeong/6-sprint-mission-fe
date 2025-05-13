@@ -2,29 +2,30 @@
 
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import PageLayout from '../../../../components/common/PageLayout'
-import WriteReply from '../../../../components/ui/article/detail/WriteReply'
-import CommentList from '../../../../components/ui/article/detail/CommentList'
+import PageLayout from '@/components/common/PageLayout'
+import WriteReply from '@/components/ui/article/detail/WriteReply'
+import CommentList from '@/components/ui/article/detail/CommentList'
 import { useParams } from 'next/navigation';
-import ItemBox from '../../../../components/ui/item/ItemBox';
+import ItemBox from '@/components/ui/item/ItemBox';
 import { useRouter } from 'next/navigation';
-import BtnPrimaryBig from '../../../../components/common/BtnPrimaryBig';
+import BtnPrimaryBig from '@/components/common/BtnPrimaryBig';
 
 
 function page() {
     const { id } = useParams();
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products/${id}`);
-                //const commentRes = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products/${id}/comments`);
-                setProduct(res.data);
-                // console.log(commentRes.data)
-                // setComments(commentRes.data);
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/product/${id}`);
+
+                if (!res.ok) throw new Error('상품 정보를 불러오지 못했습니다');
+
+                const data = await res.json(); // JSON 파싱
+                setProduct(data); // 상태에 저장
             } catch (error) {
                 console.log(error);
             } finally {

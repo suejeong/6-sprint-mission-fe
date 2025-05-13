@@ -51,7 +51,7 @@ export default function Page() {
 
         if (res.ok) {
             const result = await res.json();
-            router.push(`/product/${result.id}`);
+            router.push(`/items/${result.id}`);
         } else {
             alert("등록 실패");
         }
@@ -70,7 +70,7 @@ export default function Page() {
                         type="text"
                         value={name}
                         placeholder="상품명을 입력해 주세요"
-                        onChange={(e) => setTitle(e.target.value)}
+                        onChange={(e) => setName(e.target.value)}
                         required
                     />
                     <h3 className="mb-3 font-[700] text-lg mt-6">상품 소개</h3>

@@ -9,7 +9,7 @@ export const createProduct = async (req, res) => {
             data: {
                 name,
                 description,
-                price: Number(price),  // 👈 중요!
+                price: Number(price),
                 tags: tags ?? [],
             },
         });
