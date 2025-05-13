@@ -3,16 +3,14 @@ const prisma = new PrismaClient();
 
 export const createProduct = async (req, res) => {
     try {
-        const { title, description, price, tags } = req.body;
+        const { name, description, price, tags } = req.body;
 
         const product = await prisma.product.create({
             data: {
-                title,
+                name,
                 description,
                 price: Number(price),  // 👈 중요!
-                tags: {
-                    set: tags || [],     // 👈 Prisma에서 `String[]` 배열로 저장할 때
-                },
+                tags: tags ?? [],
             },
         });
 
