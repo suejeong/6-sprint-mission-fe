@@ -23,14 +23,19 @@ export default function MarketPage() {
         const fetchProducts = async () => {
             setLoading(true);
             try {
+                const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/product`;
+                console.log('요청 주소:', url);
+
                 const [recentRes, favoriteRes] = await Promise.all([
-                    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products?orderBy=recent`),
-                    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products?orderBy=favorite`)
+                    axios.get(url),
+                    axios.get(url)
                 ]);
 
+                console.log('응답:', recentRes.data);
+
                 setProducts({
-                    recent: recentRes.data.list,
-                    favorite: favoriteRes.data.list
+                    recent: recentRes.data,
+                    favorite: favoriteRes.data
                 });
             } catch (e) {
                 console.error(e);

@@ -8,8 +8,6 @@ import ArticleLayout from '@/app/article/layout';
 import PageLayout from '@/components/common/PageLayout';
 import BtnPrimarySmall from '@/components/ui/article/BtnPrimarySmall';
 
-
-
 export default function Page() {
 
     const router = useRouter();
@@ -48,33 +46,21 @@ export default function Page() {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/product`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title, description, price, tags })
+            body: JSON.stringify({ title, description, price: Number(price), tags })
         });
 
         if (res.ok) {
             const result = await res.json();
-            router.push(`/products/${result.id}`);
+            router.push(`/product/${result.id}`);
         } else {
             alert("등록 실패");
         }
     }
 
-
-
-    // const handleCloseModal = () => {
-    //     setIsOpen(false);
-    //     if (comment === "회원가입 성공") {
-    //         router.push("/items");
-    //     }
-    // };
-
     return (
         <ArticleLayout>
             <PageLayout>
-                <form action={handleSubmit} onSubmit={(e) => {
-                    e.preventDefault();
-                    handleSubmit();
-                }}>
+                <form onSubmit={(e) => handleSubmit(e)}>
                     <div className="flex justify-between items-center mb-5">
                         <H2Title className="flex-1">상품 등록하기</H2Title>
                         <BtnPrimarySmall type="submit">등록</BtnPrimarySmall>
