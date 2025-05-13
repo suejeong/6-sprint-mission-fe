@@ -1,4 +1,4 @@
-import MarketLayout from "../../../items/layout";
+import MarketLayout from "../layout";
 
 export default function Layout({ children }) {
     return <MarketLayout>{children}</MarketLayout>;
