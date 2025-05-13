@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import SocialLogin from "./SocialLogin";
-import AuthInput from "@/ui/auth/AuthInput";
-import BtnPrimary from "@/common/BtnPrimaryBig";
-import AreYouAlreadyAMember from "@/common/AreYouAlreadyAMember";
+import AuthInput from "@/components/ui/auth/AuthInput";
+import BtnPrimary from "@/components/common/BtnPrimaryBig";
+import AreYouAlreadyAMember from "@/components/common/AreYouAlreadyAMember";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/provider/AuthProvider";
-import Modal from "@/modal/Modal";
+import Modal from "@/components/modal/Modal";
 import { loginAction } from "@/lib/actions/auth";
 
 function SignUpForm() {

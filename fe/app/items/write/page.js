@@ -7,7 +7,7 @@ import WriteInput from '@/components/common/WriteInput';
 import ArticleLayout from '@/app/article/layout';
 import PageLayout from '@/components/common/PageLayout';
 import BtnPrimarySmall from '@/components/ui/article/BtnPrimarySmall';
-import { postProductsAction } from '@/lib/actions/postProducts'
+
 
 
 export default function Page() {
@@ -42,23 +42,23 @@ export default function Page() {
     }
 
 
-    const handleSubmit = async () => {
-        const formData = new FormData();
-        formData.append("title", title);
-        formData.append("description", description);
-        formData.append("price", price);
-        tags.forEach(tag => formData.append("tags[]", tag));
 
-        const res = await postProductsAction(formData);
-        setResult(res);
-        if (res.success) {
-            setTitle("");
-            setDescription("");
-            setPrice("");
-            setTags([]);
-            setTagInput("");
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/product`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title, description, price, tags })
+        });
+
+        if (res.ok) {
+            const result = await res.json();
+            router.push(`/products/${result.id}`);
+        } else {
+            alert("등록 실패");
         }
-    };
+    }
+
 
 
     // const handleCloseModal = () => {

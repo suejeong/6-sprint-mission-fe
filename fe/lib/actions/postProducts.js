@@ -3,17 +3,18 @@
 
 import { prisma } from '@/../be-new/prisma/prismaClient';
 
-// 🔽 서버에서 실행될 함수 (브라우저에서 직접 접근 불가)
-export async function postProductsAction(formData) {
-    // 🔽 formData는 <form> 또는 FormData 객체로부터 전달된 데이터
-    const title = formData.get('title');
-    const description = formData.get('description');
-    const price = parseFloat(formData.get('price'));
-    const tags = formData.getAll('tags[]'); // 여러 개 전달된 태그 배열
+export async function POST(request) {
+    const body = await request.json();
+    const { title, description, price, tags } = body;
 
+    if (!title || !description || isNaN(price)) {
+        return new Response(JSON.stringify({
+            message: '필수 항목을 모두 입력해주세요.',
+        }), { status: 400 });
+    }
 
-    // 🔽 DB 저장 로직이 여기에 들어갈 수 있음 (예: Prisma 등)
     const newProduct = {
+        id: Date.now(),
         title,
         description,
         price,
@@ -21,11 +22,17 @@ export async function postProductsAction(formData) {
         createdAt: new Date(),
     };
 
-    console.log("✅ 서버에서 받은 데이터:", newProduct);
+    console.log("✅ 저장된 상품:", newProduct);
 
-    // 🔽 클라이언트로 응답 반환
-    return { success: true, message: '상품이 등록되었습니다.', product: newProduct };
+    return new Response(JSON.stringify({
+        message: '등록 완료',
+        product: newProduct,
+    }), {
+        status: 201,
+        headers: { 'Content-Type': 'application/json' },
+    });
 }
+
 
 export async function getProduct(id) {
     const product = await prisma.product.findUnique({
