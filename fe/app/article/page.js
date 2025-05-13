@@ -2,13 +2,13 @@
 
 import React from 'react'
 import axios from "axios";
-import BestArticleCard from '../../components/ui/article/BestArticleCard'
-import H2Title from '../../components/common/H2Title'
-import BtnWriteArticle from '../../components/ui/article/BtnWriteArticle'
-import Search from '../../components/ui/article/Search'
-import Sorting from '../../components/ui/article/Sorting'
-import ArticleList from '../../components/ui/article/ArticleList'
-import PageLayout from '../../components/common/PageLayout'
+import BestArticleCard from '@/components/ui/article/BestArticleCard'
+import H2Title from '@/components/common/H2Title'
+import BtnWriteArticle from '@/components/ui/article/BtnWriteArticle'
+import Search from '@/components/ui/article/Search'
+import Sorting from '@/components/ui/article/Sorting'
+import ArticleList from '@/components/ui/article/ArticleList'
+import PageLayout from '@/components/common/PageLayout'
 import { useEffect, useState } from "react";
 
 function ArticlePage() {

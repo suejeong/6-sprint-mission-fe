@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import Menu from "../ui/Menu";
-import BtnPrimarySmall from "../ui/article/BtnPrimarySmall";
+import BtnPrimarySmall from "@/components/ui/article/BtnPrimarySmall";
 import H1Title from "./H1Title";
 import Image from "next/image";
-import ic_profile from "../../app/images/ic_profile.png";
-import { useAuth, logout } from "../../provider/AuthProvider";
+import ic_profile from "@/app/images/ic_profile.png";
+import { useAuth, logout } from "@/provider/AuthProvider";
 import { useRouter } from "next/navigation";
 
 function Header() {
@@ -24,16 +24,16 @@ function Header() {
 		<div className="border-1 border-[#dfdfdf] flex fixed bg-[#ffffff] h-17.5 top-0 right-0 left-0 z-50">
 			<div
 				className={`
-        max-w-screen-xl 
-        min-w-screen-m 
-        mx-auto 
-        flex 
-        fixed
-        items-center 
-        sm:px-4 
-        h-17.5
-        top-0 right-0 left-0
-      `}
+					max-w-screen-xl 
+					min-w-screen-m 
+					mx-auto 
+					flex 
+					fixed
+					items-center 
+					sm:px-4 
+					h-17.5
+					top-0 right-0 left-0
+				`}
 			>
 				<H1Title />
 				<Menu />

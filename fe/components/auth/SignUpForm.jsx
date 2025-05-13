@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import SocialLogin from "./SocialLogin";
-import AuthInput from "../ui/auth/AuthInput";
-import BtnPrimary from "../common/BtnPrimaryBig";
-import AreYouAlreadyAMember from "../common/AreYouAlreadyAMember";
+import AuthInput from "@/ui/auth/AuthInput";
+import BtnPrimary from "@/common/BtnPrimaryBig";
+import AreYouAlreadyAMember from "@/common/AreYouAlreadyAMember";
 import { useRouter } from "next/navigation";
-import { useAuth } from "../../provider/AuthProvider";
-import Modal from "../modal/Modal";
-import { loginAction } from "../../lib/actions/auth";
+import { useAuth } from "@/provider/AuthProvider";
+import Modal from "@/modal/Modal";
+import { loginAction } from "@/lib/actions/auth";
 
 function SignUpForm() {
 	const [email, setEmail] = useState("");

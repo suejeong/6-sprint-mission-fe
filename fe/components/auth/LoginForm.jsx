@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import SocialLogin from "./SocialLogin";
-import AuthInput from "../ui/auth/AuthInput";
-import BtnPrimary from "../common/BtnPrimaryBig";
-import AreYouAlreadyAMember from "../common/AreYouAlreadyAMember";
+import AuthInput from "@/components/ui/auth/AuthInput";
+import BtnPrimary from "@/components/common/BtnPrimaryBig";
+import AreYouAlreadyAMember from "@/components/common/AreYouAlreadyAMember";
 import { useRouter } from "next/navigation";
-import Modal from "../modal/Modal";
-import { loginAction } from "../../lib/actions/auth";
-import { useAuth } from "../../provider/AuthProvider";
+import Modal from "@/components/modal/Modal";
+import { loginAction } from "@/lib/actions/auth";
+import { useAuth } from "@/provider/AuthProvider";
 
 export default function LoginForm() {
 	const [email, setEmail] = useState("");

@@ -3,15 +3,15 @@
 import React from 'react'
 import axios from "axios";
 import { useEffect, useState } from "react";
-import PageLayout from '../../../components/common/PageLayout'
+import PageLayout from '@/components/common/PageLayout'
 import { useParams } from 'next/navigation';
-import ArticleHeader from '../../../components/ui/article/detail/ArticleHeader'
-import ArticleContent from '../../../components/ui/article/detail/ArticleContent'
-import WriteReply from '../../../components/ui/article/detail/WriteReply'
-import CommentList from '../../../components/ui/article/detail/CommentList'
+import ArticleHeader from '@/components/ui/article/detail/ArticleHeader'
+import ArticleContent from '@/components/ui/article/detail/ArticleContent'
+import WriteReply from '@/components/ui/article/detail/WriteReply'
+import CommentList from '@/components/ui/article/detail/CommentList'
 import { useRouter } from 'next/navigation';
-import BtnPrimaryBig from '../../../components/common/BtnPrimaryBig';
-import { useAuth } from '../../../provider/AuthProvider';
+import BtnPrimaryBig from '@/components/common/BtnPrimaryBig';
+import { useAuth } from '@/provider/AuthProvider';
 
 export default function ArticlePage() {
     const { id } = useParams();
