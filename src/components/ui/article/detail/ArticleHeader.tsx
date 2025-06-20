@@ -5,7 +5,7 @@ import LikedCount from '@/components/ui/article/detail/LikedCount'
 interface ArticleHeaderProps {
   title: string;
 }
-function ArticleHeader({ title } : ArticleHeaderProps) {
+function ArticleHeader({ title } : ArticleHeaderProps) : React.JSX.Element {
   return (
     <div className="border-b-1 border-[#E5E7EB]">
         <div className="flex justify-between gap-5 mb-4">

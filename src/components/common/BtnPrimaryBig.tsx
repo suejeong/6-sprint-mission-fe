@@ -6,7 +6,7 @@ interface BtnPrimaryBigProps{
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type? : "submit" | "reset" | "button" | undefined;
   text?: string;
-  px?: number;
+  px?: string;
 }
 function BtnPrimaryBig({ children, disabled = false, onClick, type="submit", text, px } : BtnPrimaryBigProps) {
   return (

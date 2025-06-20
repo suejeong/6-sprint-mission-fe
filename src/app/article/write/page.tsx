@@ -9,7 +9,7 @@ export default function WritePage() {
     const [content, setContent] = useState("");
     const router = useRouter();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>)  =>  {
         e.preventDefault();
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/articles`, {
             method: "POST",

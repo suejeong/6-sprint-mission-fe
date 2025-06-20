@@ -26,8 +26,8 @@ const sectionType : TsectionType = {
 	},
 };
 
-interface ItemBoxListProps extends Product {
-	products: Product[];
+interface ItemBoxListProps  {
+	products: Product[]  ;
 	section: "best" | "recent"; 
 	num?:string;
 }

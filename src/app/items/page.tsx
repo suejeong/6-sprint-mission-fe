@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 export default function MarketPage() {
 
     const [products, setProducts] = useState({ recent: [], favorite: [] });
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchProducts = async () => {
