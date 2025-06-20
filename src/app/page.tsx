@@ -2,12 +2,12 @@
 
 import React from 'react'
 import ArticleLayout from "@/app/article/layout";
-import ArticlePageComponent from '@/components/HomePageComponent';
+import ArticlePage from '@/app/article/page';
 
 function Home() {
   return (
     <ArticleLayout>
-      <ArticlePageComponent />
+      <ArticlePage />
     </ArticleLayout>
   )
 }

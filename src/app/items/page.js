@@ -19,8 +19,8 @@ export default function MarketPage() {
             setLoading(true);
             try {
                 const [recentRes, favoriteRes] = await Promise.all([
-                    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products?orderBy=recent`),
-                    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products?orderBy=favorite`)
+                    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products`),
+                    axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products`)
                 ]);
 
                 setProducts({

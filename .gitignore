@@ -3,6 +3,8 @@
 # ------------------------
 .DS_Store
 *.pem
+.vscode
+.github
 
 # 환경 변수
 .env*
