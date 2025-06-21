@@ -30,7 +30,7 @@ const formDataFetch = async (url: string, options: RequestInit = {}): Promise<an
 
 export const userService = {
   // 사용자 정보 요청
-  getMe: () => cookieFetch("/users/me"),
+  getMe: (token:string) => cookieFetch("/users/me", token),
 
   // 사용자 링크 요청
   getMyLinks: () => cookieFetch("/users/me/links"),
@@ -43,8 +43,8 @@ export const userService = {
     }),
 
   // 링크 삭제
-  deleteLink: (linkId: string) =>
-    cookieFetch(`/users/me/links/${linkId}`, {
+  deleteLink: (linkId: string, token: string) =>
+    cookieFetch(`/users/me/links/${linkId}`,token, {
       method: "DELETE",
     }),
 };

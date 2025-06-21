@@ -14,14 +14,13 @@ interface ArticleProps{
 }
 export default function ArticleList({ articles = []} : ArticleProps) {
   const router = useRouter();
-
   const handleDetail = (id : number) => {
       router.push(`/article/${id}`);
-    };
+  };
   return (
       <div>
         {articles.map((article : Article) => (
-          <div key={article.id} onClick={() => handleDetail(article.id)} className="cursor-pointer border-b-1 border-[#E5E7EB]">
+          <div key={article.id} onClick={() => handleDetail(article.id)}  className="cursor-pointer border-b-1 border-[#E5E7EB]">
             <div className="flex justify-between h-18">
               <h2 className="sm:text-lg font-[600]">{article.title}</h2>
               <div className="h-18 w-18 border-1 border-[#F3F4F6] rounded-lg flex justify-center items-center">
@@ -32,7 +31,7 @@ export default function ArticleList({ articles = []} : ArticleProps) {
               <div>
                 <Image src={ic_profile} alt="프로필이미지" className="h-6 w-6" />
               </div>
-              <Writer>총명한 판다</Writer>
+              <Writer>{article.writer.nickname}</Writer>
               <span className="flex-1">
                 <FormatedDate createdAt={article.createdAt} />
               </span>

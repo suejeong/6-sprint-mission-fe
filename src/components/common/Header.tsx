@@ -12,15 +12,13 @@ import { useRouter } from "next/navigation";
 
 
 function Header() {
-	const { user, setUser, logout } = useAuth();
+	const { user, isLoading, logout } = useAuth();
 	const router = useRouter();
 
-	// if (user === null) {
-	//   // 아직 user 정보를 불러오는 중이면 (처음 로딩 상태)
-	//   return (
-	//     <div>로딩중...</div>
-	//   );
-	// }
+	if (isLoading) {
+		return <div>로딩중...</div>;
+	}
+	console.log(user, isLoading)
 
 	return (
 		<div className="border-1 border-[#dfdfdf] flex fixed bg-[#ffffff] h-17.5 top-0 right-0 left-0 z-50">
@@ -51,11 +49,10 @@ function Header() {
 							<BtnPrimarySmall
 								onClick={async () => {
 									await logout();
-									router.replace("/login");
 								}}
 							>
 								로그아웃
-							</BtnPrimarySmall>
+							</BtnPrimarySmall >
 						</div>
 					) : (
 						<BtnPrimarySmall onClick={() => router.push("/login")}>

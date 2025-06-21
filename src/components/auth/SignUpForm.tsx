@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "../../provider/AuthProvider";
 import Modal from "../modal/Modal";
 import { loginAction } from "../../lib/actions/auth";
-import { User } from "@/app/types";
 
 
 function SignUpForm() {
@@ -127,7 +126,7 @@ function SignUpForm() {
 					placeholder="이메일을 입력해 주세요"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					errorType={isEmailValid ? undefined : "wrongType"}
+					errorType={email !== "" && (!email.includes('@') || !isEmailValid) ? "wrongType" :  undefined }
 				/>
 				<AuthInput
 					type="text"
@@ -142,14 +141,19 @@ function SignUpForm() {
 					placeholder="비밀번호를 입력해 주세요"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
+					errorType={
+						password.length < 8 && password.length > 1 ? "length" : 
+						confirmPassword !== "" && !isConfirmPasswordValid 
+						? "wrongType" : undefined
+					}
 				/>
 				<AuthInput
 					type="password"
-					title="비밀번호 확인"
+					title="비밀번호 확인" 
 					placeholder="비밀번호를 다시 한 번 입력해 주세요"
 					value={confirmPassword}
 					onChange={(e) => setConfirmPassword(e.target.value)}
-					errorType={isConfirmPasswordValid? undefined : "wrongType"}
+					errorType={confirmPassword !== "" && !isConfirmPasswordValid ? "wrongType" : undefined}
 				/>
 				<BtnPrimary
 					type="submit"

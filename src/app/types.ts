@@ -3,6 +3,9 @@ export interface Article {
   title: string;
   content: string;
   createdAt: string;
+  writer: {
+    nickname: string;
+  }
 }
 
 export interface Product {
@@ -32,4 +35,5 @@ export interface AuthContextType {
   updateUser: (user: User) => Promise<void>;
   register: (name: string, email: string, password: string) => Promise<void>;
   token: string | null;
+  isLoading: boolean;
 }

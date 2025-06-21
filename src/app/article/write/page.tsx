@@ -11,10 +11,14 @@ export default function WritePage() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>)  =>  {
         e.preventDefault();
+        const token = localStorage.getItem("accessToken");
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/articles`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title, content })
+            headers: { 
+                "Content-Type": "application/json" ,
+                "Authorization": `Bearer ${token}`,
+            },
+            body: JSON.stringify({ title, content, image: null })
         });
 
         if (res.ok) {

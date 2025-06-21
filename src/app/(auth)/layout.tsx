@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -15,7 +15,7 @@ export const metadata = {
     title: "Panda Market Login",
 };
 
-export default function AuthLayout({ children }) {
+export default function AuthLayout({ children }: { children: ReactNode}) {
     return (
         <main className="flex justify-center items-center py-20">{children}</main>
     );

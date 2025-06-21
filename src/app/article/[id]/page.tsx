@@ -48,7 +48,7 @@ export default function ArticlePage() {
     
     return (
         <PageLayout>
-            <ArticleHeader title={article.title} />
+            <ArticleHeader title={article.title} nickname={article.writer.nickname}/>
             <ArticleContent content={article.content} />
             <WriteReply />
             {/* <CommentList comments={comments} id={id} /> */}

@@ -24,24 +24,27 @@ export const defaultFetch = async (url : string, options: RequestInit = {}) => {
   const response = await fetch(`${baseURL}${url}`, mergedOptions);
 
   if (!response.ok) {
-    throw new Error(`API error: ${response.status}`);
+    const error: any = new Error(`API error: ${response.status}`);
+    error.status = response.status;
+    throw error;
   }
 
   return response.json();
 };
 
 /**
- * 쿠키 인증 fetch 클라이언트
+ *  인증 fetch 클라이언트
  */
-export const cookieFetch = async (url: string, options: RequestInit = {}) => {
-  const baseURL = process.env.NEXT_PUBLIC_API_URL;
+export const cookieFetch = async (url: string, token? : string, options: RequestInit = {}) => {
+  const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
   const defaultOptions: RequestInit = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    // 쿠키 전송을 위한 설정
-    credentials: "include",
-    // 서버 컴포넌트에서도 매번 재검증
+    headers,
     cache: "no-store",
   };
 
@@ -54,35 +57,47 @@ export const cookieFetch = async (url: string, options: RequestInit = {}) => {
     },
   };
 
+  
   // 원래 요청 실행
   let response = await fetch(`${baseURL}${url}`, mergedOptions);
 
   // 401 에러 발생 시 토큰 갱신 시도
-  if (response.status === 401 && url !== "/auth/token/refresh") {
-    try {
-      // 토큰 갱신 요청
-      const refreshResponse = await fetch(`${baseURL}/auth/token/refresh`, {
-        method: "POST",
-        credentials: "include",
-        cache: "no-store",
-      });
+  if (response.status === 401 && url !== "/auth/refresh-token") {
+      try {
+        const refreshResponse = await fetch(`${baseURL}/auth/refresh-token`, {
+          method: "POST",
+          credentials: "include",
+          cache: "no-store",
+        });
 
-      if (refreshResponse.ok) {
-        // 토큰 갱신 성공 시 원래 요청 재시도
-        response = await fetch(`${baseURL}${url}`, mergedOptions);
-      }
-
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        if (refreshResponse.ok) {
+          // 예시: 새 토큰을 받아 localStorage에 저장
+          const { token: newToken } = await refreshResponse.json();
+          if (newToken) {
+            localStorage.setItem("accessToken", newToken);
+            headers["Authorization"] = `Bearer ${newToken}`;
+            response = await fetch(`${baseURL}${url}`, {
+              ...mergedOptions,
+              headers,
+            });
+          }
+        } else {
+          const err: any = new Error("토큰 갱신 실패");
+          err.status = 401;
+          throw err;
         }
-        return response.json();
-    } catch (error) {
-      console.error("토큰 갱신 실패:", error);
-      return [];
+      } catch (error) {
+        const err: any = new Error("토큰 갱신 실패");
+        err.status = 401;
+        throw err;
+      }
     }
-  }
 
-  
+  if (!response.ok) {
+    const error: any = new Error(`API error: ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
 
   // 응답 본문이 있는지 확인
   const contentType = response.headers.get("content-type");

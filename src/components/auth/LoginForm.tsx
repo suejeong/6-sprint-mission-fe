@@ -21,7 +21,7 @@ export default function LoginForm() {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [btnLabel, setBtnLabel] = useState<string>("");
 	const [comment, setComment] = useState<string>("");
-	const { setUser } = useAuth();
+	const { setUser, login, isLoading } = useAuth();
 
 	const openModal  = (type: string, errorMessage?: string) : void => {
 		setIsOpen(true);
@@ -40,13 +40,10 @@ export default function LoginForm() {
 		setIsSummiting(true);
 
 		try {
-			const data = await loginAction({ email, password });
-			localStorage.setItem("accessToken", data.accessToken);
-			localStorage.setItem("refreshToken", data.refreshToken);
-			setUser(data.user);
-			openModal("success");
+			await login(email, password); // AuthProvider의 login 함수 사용
+    		openModal("success");
 		} catch (error) {
-			let errorMessage = "회원가입 실패";
+			let errorMessage = "로그인 실패";
 			if (error && typeof error === "object" && "message" in error) {
 			// error가 Error 객체이거나, 서버에서 message를 반환하는 경우
 			errorMessage = (error as any).message || errorMessage;
@@ -74,7 +71,7 @@ export default function LoginForm() {
 					placeholder="이메일을 입력해 주세요"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					errorType={isEmailValid ? undefined : "wrongType"}
+					errorType={isEmailValid ?  "wrongType" : undefined }
 				/>
 				<AuthInput
 					type="password"
@@ -82,7 +79,7 @@ export default function LoginForm() {
 					placeholder="비밀번호를 입력해 주세요"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
-					errorType={isPasswordValid ? undefined : "wrongType"}
+					errorType={isPasswordValid ? "wrongType" : undefined }
 				/>
 				<BtnPrimary
 					type="submit"

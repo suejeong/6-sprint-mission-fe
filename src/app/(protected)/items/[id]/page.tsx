@@ -9,13 +9,14 @@ import { useParams } from 'next/navigation';
 import ItemBox from '../../../../components/ui/item/ItemBox';
 import { useRouter } from 'next/navigation';
 import BtnPrimaryBig from '../../../../components/common/BtnPrimaryBig';
+import { Product } from '@/app/types';
 
 
 function page() {
     const { id } = useParams();
-    const [product, setProduct] = useState([]);
-    const [comments, setComments] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [product, setProduct] = useState<Product | null>(null);
+    const [comments, setComments] = useState<Comment | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
     const router = useRouter();
     useEffect(() => {
         const fetchProduct = async () => {
@@ -36,7 +37,7 @@ function page() {
 
     return (
         <PageLayout>
-            <ItemBox product={product} />
+            {product && <ItemBox product={product} />}
             <WriteReply />
             {/* <CommentList comments={comments} id={id} /> */}
             <div className="flex justify-center mt-10">
